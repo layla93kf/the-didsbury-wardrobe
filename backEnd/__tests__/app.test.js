@@ -28,7 +28,7 @@ describe("GET /api/clothing/:category", () => {
         ];
         body.data.forEach((item) => {
           expect(Object.getOwnPropertyNames(item)).toEqual(requiredKeys);
-          console.log(item);
+
           expect(item["category_id"]).toBe(1);
         });
       });

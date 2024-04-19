@@ -2,6 +2,7 @@ import stepOne from "../assets/How-It-Works-Info/1.png";
 import stepTwo from "../assets/How-It-Works-Info/2.png";
 import stepThree from "../assets/How-It-Works-Info/3.png";
 import stepFour from "../assets/How-It-Works-Info/4.png";
+// const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
 
 export default function HowItWorks() {
   return (

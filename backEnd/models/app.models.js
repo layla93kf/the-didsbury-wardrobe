@@ -1,7 +1,6 @@
 const db = require("../db/connection.js");
 
 fetchItemsByCategory = (category) => {
-  console.log("model");
   const categoryLookUp = {
     dresses: 1,
     jumpsuits: 2,
