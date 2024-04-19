@@ -1,2 +1,2 @@
 exports.clothingData = require("./clothing.js");
-exports.categoryData = require("./categories.js");
+exports.categoriesData = require("./categories.js");

@@ -4,3 +4,4 @@ const categoriesData = [
   { name: "Jackets and Blazers" },
   { name: "Skirts" },
 ];
+module.exports = categoriesData;
