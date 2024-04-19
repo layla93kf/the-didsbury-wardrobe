@@ -1,6 +1,8 @@
 const categoriesData = [
-  { name: "Dresses" },
-  { name: "Jumpsuits" },
-  { name: "Jackets and Blazers" },
-  { name: "Skirts" },
+  { 1: "Dresses" },
+  { 2: "Jumpsuits" },
+  { 3: "Jackets and Blazers" },
+  { 4: "Skirts" },
 ];
+
+module.exports = categoriesData;

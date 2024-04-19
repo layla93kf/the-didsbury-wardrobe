@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
-
-const {} = require("");
+const getItemByCategory = require("./controllers/app.controllers.js");
 
 const {
   handlePSQLErrors,
@@ -21,4 +20,4 @@ app.all("/api/*", (req, res, next) => {
   res.status(404).send({ msg: "Path not found!" });
 });
 
-module.exports = { app, server };
+module.exports = { app };
