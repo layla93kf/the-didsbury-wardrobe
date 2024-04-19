@@ -1,5 +1,3 @@
-import Link from "react";
-
 export default function Navbar() {
   return (
     <nav className="bg-gray-800">
@@ -9,25 +7,25 @@ export default function Navbar() {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <a
-                  href="#"
+                  //   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Dresses
                 </a>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  //   href="#"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-serif"
                 >
                   Jumpsuits
                 </a>
                 <a
-                  href="#"
+                  //   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Jackets
                 </a>
                 <a
-                  href="#"
+                  //   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Skirts
