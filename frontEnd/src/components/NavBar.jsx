@@ -1,40 +1,24 @@
-export default function Navbar() {
+const NavBar = () => {
   return (
-    <nav className="bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <a
-                  //   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Dresses
-                </a>
-                <a
-                  //   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-serif"
-                >
-                  Jumpsuits
-                </a>
-                <a
-                  //   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Jackets
-                </a>
-                <a
-                  //   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Skirts
-                </a>
-              </div>
-            </div>
+    <div className="bg-stone-100  w-full left-0">
+      <div className="md:flex py-4 justify-center">
+        <div className="font-semibold text-xl font-roboto flex space-x-6">
+          <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+            Dresses
+          </div>
+          <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+            Jumpsuits
+          </div>
+          <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+            Jackets & Blazers
+          </div>
+          <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+            Skirts
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
-}
+};
+
+export default NavBar;

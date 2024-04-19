@@ -1,10 +1,10 @@
 import React from "react";
+import logo from "../assets/logo.png";
 
 export default function Header() {
   return (
-    <header className="header" id="flex-div">
-      <h3 className="text-xl">Welcome to the Didsbury Wardrobe</h3>
-      <h1 className="text-9xl">The Didsbury Wardrobe</h1>
-    </header>
+    <div className="flex justify-center items-center">
+      <img src={logo} alt="Logo" className="w-70 h-60" />
+    </div>
   );
 }
