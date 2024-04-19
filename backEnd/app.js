@@ -1,0 +1,24 @@
+const express = require("express");
+const app = express();
+
+const {} = require("");
+
+const {
+  handlePSQLErrors,
+  handleCustomErrors,
+  handleServerErrors,
+} = require("./controllers/errors.controllers.js");
+
+app.use(express.json());
+
+app.get("/api/clothing/:category", getItemByCategory);
+
+//error handling
+
+app.use(handlePSQLErrors, handleCustomErrors, handleServerErrors);
+
+app.all("/api/*", (req, res, next) => {
+  res.status(404).send({ msg: "Path not found!" });
+});
+
+module.exports = { app, server };
