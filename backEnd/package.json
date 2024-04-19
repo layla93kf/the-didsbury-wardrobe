@@ -7,8 +7,8 @@
     "test": "jest",
     "dev": "nodemon listen.js",
     "setup-dbs": "psql -f ./db/setup.sql",
-    "seed": "ts-node ./db/seeds/run-seed.js",
-    "start": "ts-node listen.js",
+    "seed": "node ./db/seeds/run-seed.js",
+    "start": "node listen.js",
     "seed-prod": "NODE_ENV=production npm run seed",
     "playground": "psql -f playground.sql > playground.txt"
   },
