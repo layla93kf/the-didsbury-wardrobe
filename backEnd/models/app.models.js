@@ -1,25 +1,22 @@
 const db = require("../db/connection.js");
 
 fetchItemsByCategory = (category) => {
-  const categoryLookUp = {
-    dresses: 1,
-    jumpsuits: 2,
-    jackets: 3,
-    skirts: 4,
+  const categoryStrings = {
+    dresses: "Dresses",
   };
+  const categoryValue = categoryStrings[category];
 
   return db
-    .query(
-      `SELECT * FROM clothing WHERE category_id = ${categoryLookUp[category]};`
-    )
+    .query(`SELECT * FROM clothing WHERE category = $1;`, [categoryValue])
     .then(({ rows }) => {
+      console.log(rows);
       if (rows.length === 0) {
         return Promise.reject({
           status: 404,
           message: "category not found",
         });
       }
-
+      console.log(rows);
       return rows;
     });
 };

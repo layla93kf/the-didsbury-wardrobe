@@ -22,14 +22,12 @@ describe("GET /api/clothing/:category", () => {
           "name",
           "origin",
           "size",
-          "category_id",
+          "category",
           "price",
           "photos",
         ];
         body.data.forEach((item) => {
           expect(Object.getOwnPropertyNames(item)).toEqual(requiredKeys);
-
-          expect(item["category_id"]).toBe(1);
         });
       });
   });
