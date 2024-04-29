@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const getItemByCategory = require("./controllers/app.controllers.js");
+const cors = require("cors");
 
 const {
   handlePSQLErrors,
@@ -9,7 +10,7 @@ const {
 } = require("./controllers/errors.controllers.js");
 
 app.use(express.json());
-
+app.use(cors());
 app.get("/api/clothing/:category", getItemByCategory);
 
 //error handling
