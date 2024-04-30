@@ -6,8 +6,8 @@ const clothingData = [
     category: "Dresses",
     price: 0.0,
     photos: [
-      "../../../assets/Reiss-Linda-Lace-Shift-Dress/1.png",
-      "../../../assets/Reiss-Linda-Lace-Shift-Dress/2.png",
+      "https://www.canva.com/design/DAF_m765VR4/_QRzMh5RRW4mgdBlKqyzAg/edit",
+      "https://www.canva.com/design/DAF_nLJNJ00/_bfdtR-lISKAnkGSP5trJQ/view?utm_content=DAF_nLJNJ00&utm_campaign=designshare&utm_medium=link&utm_source=editor",
       "../../../assets/Reiss-Linda-Lace-Shift-Dress/3.png",
       "../../../assets/Reiss-Linda-Lace-Shift-Dress/4.png",
       "../../../assets/Reiss-Linda-Lace-Shift-Dress/5.png",
