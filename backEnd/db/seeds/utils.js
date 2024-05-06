@@ -7,5 +7,4 @@ const formattingPhotos = (clothingData) => {
   return formattedData;
 };
 
-const { clothingData } = require("../data/dev-data");
 module.exports = { formattingPhotos };
