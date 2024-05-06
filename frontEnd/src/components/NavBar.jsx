@@ -1,10 +1,13 @@
-import useMediaQuery from "../hooks/useMediaQuery";
-import { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
+import useMediaQuery from '../hooks/useMediaQuery'
+import { useState } from 'react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
+  const [isMenuToggled, setIsMenuToggled] = useState(false)
+
+  // <Link to="/"> Home </Link>
 
   if (isAboveMediumScreens) {
     return (
@@ -12,21 +15,29 @@ const NavBar = () => {
         <div className="md:flex py-4 justify-center">
           <div className="font-semibold text-xl font-roboto flex space-x-6">
             <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
-              Dresses
+              <li className="list-none">
+                <Link to="/api/clothing/dresses"> Dresses </Link>
+              </li>
             </div>
             <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
-              Jumpsuits
+              <li className="list-none">
+                <Link to="/api/clothing/jumpsuits"> Jumpsuits </Link>
+              </li>
             </div>
-            <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
-              Jackets & Blazers
-            </div>
-            <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
-              Skirts
-            </div>
+          </div>
+          <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+            <li className="list-none">
+              <Link to="/api/clothing/jackets"> Jackets & Blazers </Link>
+            </li>
+          </div>
+          <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+            <li className="list-none">
+              <Link to="/api/clothing/skirts"> Skirts </Link>
+            </li>
           </div>
         </div>
       </div>
-    );
+    )
   } else if (!isAboveMediumScreens && isMenuToggled) {
     return (
       <div className="fixed right-0 bottom-0 z-40 h-full w-[200px] bg-primary-100 drop-shadow-xl">
@@ -42,7 +53,7 @@ const NavBar = () => {
           <p>Skirts</p>
         </div>
       </div>
-    );
+    )
   } else {
     return (
       <button
@@ -51,8 +62,8 @@ const NavBar = () => {
       >
         <Bars3Icon className="h-10 w-10 text-black " />
       </button>
-    );
+    )
   }
-};
+}
 
-export default NavBar;
+export default NavBar
