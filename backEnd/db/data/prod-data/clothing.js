@@ -2,8 +2,8 @@ const clothingData = [
   {
     name: 'Linda Lace Shift Dress',
     origin: 'Reiss',
-    size: '14',
-    category: 'Dresses',
+    size: 'UK 14',
+    category: 'dresses',
     price: 0.0,
     photos:
       'https://www.canva.com/design/DAGBBQidKzI/e1Dqa3DyAd3lZ-rYetSHJw/view?embed',
@@ -11,8 +11,8 @@ const clothingData = [
   {
     name: 'Black and Gold &other stories',
     origin: '& other stories',
-    size: '8',
-    category: 'Dresses',
+    size: 'UK 8',
+    category: 'dresses',
     price: 0.0,
     photos:
       'https://www.canva.com/design/DAF_m765VR4/ya8lZkqNyyZbIkRxgT7Ffg/view?embed',
@@ -20,11 +20,92 @@ const clothingData = [
   {
     name: 'Black Silk Sheer Dress with Slip',
     origin: 'Paul Smith',
-    size: '10/12',
-    category: 'Dresses',
+    size: 'UK 10/12',
+    category: 'dresses',
     price: 0.0,
     photos:
       'https://www.canva.com/design/DAF_nl9k9bs/HOSbK4C4pB4JK1PsNxyB0w/view?embed',
+  },
+  {
+    name: 'Black Silk Slip',
+    origin: '& Other Stories',
+    size: 'UK 6/8',
+    category: 'dresses',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAF_nLJNJ00/n3-WySCxUL64_yWS7WhVcg/view?embed',
+  },
+  {
+    name: 'Long Gold Sequin Gown',
+    origin: 'Jenny Packham',
+    size: 'UK 16',
+    category: 'dresses',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAGAK8T3hNM/IsX51yuFrBQ9Z1VKFggCQw/watch?embed',
+  },
+  {
+    name: 'Black and Floral Dress',
+    origin: 'Ted Baker',
+    size: 'UK 10',
+    category: 'dresses',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAGALGNMR34/nnUmiwoVKzAJNttebtCRuw/watch?embed',
+  },
+  {
+    name: 'Black/ Navy with embellished Collar',
+    origin: 'Ted Baker',
+    size: 'UK 10',
+    category: 'dresses',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAGALGNMR34/nnUmiwoVKzAJNttebtCRuw/watch?embed',
+  },
+  {
+    name: 'Vintage Green Oversized Mini',
+    origin: 'Paul & Joe',
+    size: 'UK 8/10',
+    category: 'dresses',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAF_nv0v94s/lNciVg0C4iobOyRtkDhU0w/view?embed',
+  },
+  {
+    name: 'Gold Puff Ball Dress Gold Brocade',
+    origin: 'Sister Jane',
+    size: 'UK 12/14',
+    category: 'dresses',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAGAK3XBcvA/1R8kct9oiio0WwiB5_Dz7A/watch?embed',
+  },
+  {
+    name: 'Orange Wide Legged Jumpsuit',
+    origin: '',
+    size: 'UK 10',
+    category: 'jumpsuits',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAF_nzOs7QA/xHnFOVqknFXSLVw9nExv4g/view?embed',
+  },
+  {
+    name: 'Oversized Pink Short Suit',
+    origin: '',
+    size: 'Size 10',
+    category: 'jackets',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAF_nRcVEuE/TdLKOcdDz3581MX-kCJBqg/view?embed',
+  },
+  {
+    name: 'Leopard Print Denim Jacket',
+    origin: 'Ganni',
+    size: 'Fits UK 8',
+    category: 'jackets',
+    price: 0.0,
+    photos:
+      'https://www.canva.com/design/DAGC-UL2z7I/NpXhWUifdrfwR8eQ6CKQbg/view?embed',
   },
 ]
 module.exports = clothingData
