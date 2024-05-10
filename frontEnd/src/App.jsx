@@ -15,8 +15,7 @@ function App() {
       <Banner />
       <Header />
       <Navbar />
-      <TopPicks />
-      <HowItWorks />
+
       <Footer />
 
       <Routes>
