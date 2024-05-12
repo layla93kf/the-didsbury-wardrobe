@@ -1,4 +1,5 @@
 const prodData = require('../data/prod-data/clothing.js')
+const devDara = require('../data/dev-data/clothing.js')
 const seed = require('./seed.js')
 const db = require('../connection.js')
 
