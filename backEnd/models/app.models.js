@@ -23,18 +23,18 @@ exports.fetchItemsByCategory = (category) => {
     })
 }
 
-exports.fetchItemsById = (clothingId) => {
+exports.fetchItemById = (clothingId) => {
+  console.log('model')
   return db
     .query(`SELECT * FROM clothing WHERE clothing_id = $1;`, [clothingId])
     .then(({ rows }) => {
-      console.log(rows)
       if (rows.length === 0) {
         return Promise.reject({
           status: 404,
           message: 'item not found',
         })
       }
-      console.log(rows)
+
       return rows
     })
 }

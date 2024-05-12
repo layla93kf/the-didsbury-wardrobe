@@ -32,22 +32,26 @@ describe('GET /api/clothing/:category', () => {
         })
       })
   })
-  describe('GET /api/clothing/:clothing_id', () => {
+
+  describe('GET /api/items/:clothing_id', () => {
     it('returns status code 200 with clothing data for a specific clothing ID', () => {
       return request(app)
-        .get('/api/clothing/123') // Replace '123' with a valid clothing ID
+        .get('/api/items/2') // Assuming the clothing_id is 2
         .expect(200)
         .then(({ body }) => {
-          const requiredKeys = [
-            'clothing_id',
-            'name',
-            'origin',
-            'size',
-            'category',
-            'price',
-            'photos',
-          ]
-          expect(Object.getOwnPropertyNames(body)).toEqual(requiredKeys)
+          console.log(body)
+          const expectedItem = {
+            clothing_id: 2,
+            name: 'Black and Gold &other stories',
+            origin: '& other stories',
+            size: '8',
+            category: 'dresses',
+            price: '0.00',
+            photos:
+              'https://www.canva.com/design/DAF_m765VR4/ya8lZkqNyyZbIkRxgT7Ffg/view?embed',
+          }
+          const receivedItem = body.data[0]
+          expect(receivedItem).toEqual(expectedItem)
         })
     })
 

@@ -1,6 +1,5 @@
 const format = require('pg-format')
 const db = require('../connection')
-const { formattingPhotos } = require('./utils.js')
 
 const seed = (clothingData) => {
   return db

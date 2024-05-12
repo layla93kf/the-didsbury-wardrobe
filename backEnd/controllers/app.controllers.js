@@ -1,4 +1,4 @@
-const fetchItemsByCategory = require('../models/app.models')
+const { fetchItemsByCategory, fetchItemById } = require('../models/app.models')
 
 exports.getItemByCategory = (req, res, next) => {
   const { category } = req.params
@@ -15,13 +15,12 @@ exports.getItemByCategory = (req, res, next) => {
 exports.getItemById = (req, res, next) => {
   const { clothing_id } = req.params
 
-  console.log(clothing_id)
-
-  fetchItemsById(category)
+  fetchItemById(clothing_id)
     .then((item) => {
       res.status(200).send({ data: item })
     })
     .catch((err) => {
+      console.log(err)
       next(err)
     })
 }
