@@ -2,7 +2,7 @@ import { getItemsByCategory } from '../Api'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { loadingVideo } from '../assets/Loading.mp4'
+import LoadingSpinner from '../components/Loading'
 
 export default function ItemList({ isLoading, setIsLoading }) {
   const [itemList, setItemList] = useState([])
@@ -25,7 +25,9 @@ export default function ItemList({ isLoading, setIsLoading }) {
     category.charAt(0).toUpperCase() + category.slice(1)
 
   return isLoading ? (
-    <video src="../assets/Loading.mp4" />
+    <>
+      <LoadingSpinner />
+    </>
   ) : (
     <div className="item">
       <div className="bg-stone-100  text-center h-100 pt-12 pb-10">
