@@ -2,25 +2,25 @@ const clothingData = [
   {
     name: 'Linda Lace Shift Dress',
     origin: 'Reiss',
-    size: 'UK 14',
+    size: '14',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAGBBQidKzI/e1Dqa3DyAd3lZ-rYetSHJw/view?embed',
   },
   {
-    name: 'Black and Gold &other stories',
+    name: 'Black and Gold & Other stories',
     origin: '& other stories',
-    size: 'UK 8',
+    size: '8',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAF_m765VR4/ya8lZkqNyyZbIkRxgT7Ffg/view?embed',
   },
   {
     name: 'Black Silk Sheer Dress with Slip',
     origin: 'Paul Smith',
-    size: 'UK 10/12',
+    size: '10/12',
     category: 'dresses',
     price: 0.0,
     photos:
@@ -29,81 +29,73 @@ const clothingData = [
   {
     name: 'Black Silk Slip',
     origin: '& Other Stories',
-    size: 'UK 6/8',
+    size: '6/8',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAF_nLJNJ00/n3-WySCxUL64_yWS7WhVcg/view?embed',
   },
   {
     name: 'Long Gold Sequin Gown',
     origin: 'Jenny Packham',
-    size: 'UK 16',
+    size: '16',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £40',
     photos:
       'https://www.canva.com/design/DAGAK8T3hNM/IsX51yuFrBQ9Z1VKFggCQw/view?embed',
   },
+
   {
-    name: 'Black and Floral Dress',
+    name: 'Black/ Navy with embellished Collar',
     origin: 'Ted Baker',
-    size: 'UK 10',
+    size: '10',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £12',
     photos:
       'https://www.canva.com/design/DAGALGNMR34/nnUmiwoVKzAJNttebtCRuw/view?embed',
   },
   {
-    name: 'Black/ Navy with embellished Collar',
-    origin: 'Ted Baker',
-    size: 'UK 10',
-    category: 'dresses',
-    price: 0.0,
-    photos:
-      'https://www.canva.com/design/DAGALGNMR34/nnUmiwoVKzAJNttebtCRuw/watch?embed',
-  },
-  {
     name: 'Vintage Green Oversized Mini',
     origin: 'Paul & Joe',
-    size: 'UK 8/10',
+    size: '8/10',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £40',
     photos:
       'https://www.canva.com/design/DAF_nv0v94s/lNciVg0C4iobOyRtkDhU0w/view?embed',
   },
   {
     name: 'Gold Puff Ball Dress Gold Brocade',
     origin: 'Sister Jane',
-    size: 'UK 12/14',
+    size: '12/14',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAGAK3XBcvA/1R8kct9oiio0WwiB5_Dz7A/view?embed',
   },
   {
     name: 'Orange Wide Legged Jumpsuit',
-    origin: '',
-    size: 'UK 10',
+    origin: 'UNKNOWN',
+    size: '10',
     category: 'jumpsuits',
-    price: 0.0,
+    price: 'RENT FROM £12',
     photos:
       'https://www.canva.com/design/DAF_nzOs7QA/xHnFOVqknFXSLVw9nExv4g/view?embed',
   },
   {
     name: 'Oversized Pink Short Suit',
-    origin: '',
-    size: 'Size 10',
+    origin: 'UNKNOWN',
+    size: '10',
     category: 'jackets',
-    price: 0.0,
+    price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAF_nRcVEuE/TdLKOcdDz3581MX-kCJBqg/view?embed',
   },
   {
     name: 'Leopard Print Denim Jacket',
     origin: 'Ganni',
-    size: 'Fits UK 8',
+    size: '8',
     category: 'jackets',
-    price: 0.0,
+    price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAGC-UL2z7I/NpXhWUifdrfwR8eQ6CKQbg/view?embed',
   },
@@ -115,6 +107,24 @@ const clothingData = [
     price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAGFs-5COGA/um8aWqUvNf6rlzkq4pP6NA/view?embed',
+  },
+  {
+    name: 'Black and Floral',
+    origin: 'Ted Baker',
+    size: '10',
+    category: 'Dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGFyTS1z6g/EB1DLTEBzfYlGYcm68lc6Q/view?embed',
+  },
+  {
+    name: 'Embellished Collar Dress',
+    origin: 'Ted Baker',
+    size: '10',
+    category: 'Dresses',
+    price: 'RENT FROM £12',
+    photos:
+      'https://www.canva.com/design/DAGFyVGJM1c/4nYOGKiniHhRfMvAgIYkJQ/view?embed',
   },
 ]
 module.exports = clothingData

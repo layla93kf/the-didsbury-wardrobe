@@ -12,7 +12,7 @@ const seed = (clothingData) => {
             origin VARCHAR(255),
             size VARCHAR(20),
             category VARCHAR(30),
-            price DECIMAL(10, 2),
+            price VARCHAR(30),
             photos VARCHAR
           );
         `)
