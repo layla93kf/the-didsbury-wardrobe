@@ -42,7 +42,7 @@ const clothingData = [
     category: 'dresses',
     price: 0.0,
     photos:
-      'https://www.canva.com/design/DAGAK8T3hNM/IsX51yuFrBQ9Z1VKFggCQw/watch?embed',
+      'https://www.canva.com/design/DAGAK8T3hNM/IsX51yuFrBQ9Z1VKFggCQw/view?embed',
   },
   {
     name: 'Black and Floral Dress',
@@ -51,7 +51,7 @@ const clothingData = [
     category: 'dresses',
     price: 0.0,
     photos:
-      'https://www.canva.com/design/DAGALGNMR34/nnUmiwoVKzAJNttebtCRuw/watch?embed',
+      'https://www.canva.com/design/DAGALGNMR34/nnUmiwoVKzAJNttebtCRuw/view?embed',
   },
   {
     name: 'Black/ Navy with embellished Collar',
@@ -78,7 +78,7 @@ const clothingData = [
     category: 'dresses',
     price: 0.0,
     photos:
-      'https://www.canva.com/design/DAGAK3XBcvA/1R8kct9oiio0WwiB5_Dz7A/watch?embed',
+      'https://www.canva.com/design/DAGAK3XBcvA/1R8kct9oiio0WwiB5_Dz7A/view?embed',
   },
   {
     name: 'Orange Wide Legged Jumpsuit',
@@ -106,6 +106,15 @@ const clothingData = [
     price: 0.0,
     photos:
       'https://www.canva.com/design/DAGC-UL2z7I/NpXhWUifdrfwR8eQ6CKQbg/view?embed',
+  },
+  {
+    name: 'Leopard Midi Dress',
+    origin: 'Never Fully Dressed',
+    size: '18',
+    category: 'Dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGFs-5COGA/um8aWqUvNf6rlzkq4pP6NA/view?embed',
   },
 ]
 module.exports = clothingData

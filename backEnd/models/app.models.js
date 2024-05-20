@@ -24,7 +24,6 @@ exports.fetchItemsByCategory = (category) => {
 }
 
 exports.fetchItemById = (clothingId) => {
-  console.log('model')
   return db
     .query(`SELECT * FROM clothing WHERE clothing_id = $1;`, [clothingId])
     .then(({ rows }) => {
