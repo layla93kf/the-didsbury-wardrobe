@@ -61,7 +61,7 @@ export default function ItemList() {
             </h1>
             <p className="mb-3 text-ml">{singleItem.name}</p>
             <p className="mb-3 text-ml">{singleItem.price}</p>
-            <p className="text-ml mb-7">{singleItem.size}</p>
+            <p className="text-ml mb-7">UK {singleItem.size}</p>
             <div className="bg-zinc-100 p-4 rounded-lg mb-4 w-full md:w-60">
               <p>Worried about fit?</p>
               <p>You can come and try on free of charge!</p>
@@ -71,9 +71,9 @@ export default function ItemList() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h3 className="bg-zinc-500 rounded-lg p-4 text-white mb-8 w-full md:w-60">
+              <button className="border-2 bg-zinc-100 text-black p-4 hover:bg-zinc-800 hover:text-white rounded w-full">
                 Message me to arrange a fit or a rental!
-              </h3>
+              </button>
             </a>
           </div>
         </>
