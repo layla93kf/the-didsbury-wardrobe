@@ -37,3 +37,24 @@ exports.fetchItemById = (clothingId) => {
       return rows
     })
 }
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+function generateRandomIds(count, min, max) {
+  const randomIds = []
+  for (let i = 0; i < count; i++) {
+    randomIds.push(getRandomInt(min, max))
+  }
+  return randomIds
+}
+
+exports.fetchRandomItems = () => {
+  const randomIds = generateRandomIds(8, 1, 50)
+  const idPlaceholders = randomIds.map((_, index) => `$${index + 1}`).join(', ')
+  return db
+    .query(`SELECT * FROM clothing WHERE clothing_id IN (${idPlaceholders});`)
+    .then(({ rows }) => {
+      return rows
+    })
+}

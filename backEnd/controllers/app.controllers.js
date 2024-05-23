@@ -1,4 +1,8 @@
-const { fetchItemsByCategory, fetchItemById } = require('../models/app.models')
+const {
+  fetchItemsByCategory,
+  fetchItemById,
+  fetchRandomItems,
+} = require('../models/app.models')
 
 exports.getItemByCategory = (req, res, next) => {
   const { category } = req.params
@@ -18,6 +22,17 @@ exports.getItemById = (req, res, next) => {
   fetchItemById(clothing_id)
     .then((item) => {
       res.status(200).send({ data: item })
+    })
+    .catch((err) => {
+      console.log(err)
+      next(err)
+    })
+}
+
+exports.getRandomItems = (req, res, next) => {
+  fetchRandomItems()
+    .then((items) => {
+      res.status(200).send({ data: items })
     })
     .catch((err) => {
       console.log(err)

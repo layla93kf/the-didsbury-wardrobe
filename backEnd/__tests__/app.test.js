@@ -46,7 +46,7 @@ describe('GET /api/clothing/:category', () => {
             origin: '& other stories',
             size: '8',
             category: 'dresses',
-            price: '0.00',
+            price: 'RENT FROM £20',
             photos:
               'https://www.canva.com/design/DAF_m765VR4/ya8lZkqNyyZbIkRxgT7Ffg/view?embed',
           }
