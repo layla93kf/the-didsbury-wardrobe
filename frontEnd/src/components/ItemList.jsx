@@ -7,7 +7,7 @@ import FilterBySize from './FilterBySize'
 
 export default function ItemList({ isLoading, setIsLoading }) {
   const [itemList, setItemList] = useState([])
-  const { category, clothing_id } = useParams()
+  const { category } = useParams()
   const [selectedSize, setSelectedSize] = useState(null)
 
   useEffect(() => {
