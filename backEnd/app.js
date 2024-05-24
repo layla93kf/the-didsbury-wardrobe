@@ -3,6 +3,7 @@ const app = express()
 const {
   getItemByCategory,
   getItemById,
+  getRandomItems,
 } = require('./controllers/app.controllers.js')
 const cors = require('cors')
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use(cors())
 app.get('/api/clothing/:category', getItemByCategory)
 app.get('/api/items/:clothing_id', getItemById)
+app.get('/api/home/top-picks', getRandomItems)
 
 //error handling
 

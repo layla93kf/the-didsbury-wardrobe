@@ -25,8 +25,13 @@ export const getItemById = (clothingId) => {
 export const getRandomItems = () => {
   let path = 'https://the-didsbury-wardrobe-3.onrender.com/api/home/top-picks'
   console.log(path)
-  return axios.get(path).then((response) => {
-    console.log(response.data)
-    return response.data
-  })
+  return axios
+    .get(path)
+    .then((response) => {
+      console.log(response.data)
+      return response.data
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 }

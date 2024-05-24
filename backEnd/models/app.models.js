@@ -43,18 +43,28 @@ function getRandomInt(min, max) {
 
 function generateRandomIds(count, min, max) {
   const randomIds = []
+
   for (let i = 0; i < count; i++) {
-    randomIds.push(getRandomInt(min, max))
+    const randomInt = getRandomInt(min, max)
+    if (!randomIds.includes(randomInt)) {
+      randomIds.push(randomInt)
+    }
   }
   return randomIds
 }
 
 exports.fetchRandomItems = () => {
-  const randomIds = generateRandomIds(8, 1, 50)
-  const idPlaceholders = randomIds.map((_, index) => `$${index + 1}`).join(', ')
+  const randomIds = generateRandomIds(9, 1, 50)
+
+  const idPlaceholders = randomIds.map((id) => `${id}`).join(', ')
+  console.log(idPlaceholders)
   return db
     .query(`SELECT * FROM clothing WHERE clothing_id IN (${idPlaceholders});`)
     .then(({ rows }) => {
+      console.log(rows)
       return rows
+    })
+    .catch((err) => {
+      console.log(err)
     })
 }

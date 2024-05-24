@@ -39,7 +39,6 @@ describe('GET /api/clothing/:category', () => {
         .get('/api/items/2') // Assuming the clothing_id is 2
         .expect(200)
         .then(({ body }) => {
-          console.log(body)
           const expectedItem = {
             clothing_id: 2,
             name: 'Black and Gold &other stories',
@@ -56,9 +55,34 @@ describe('GET /api/clothing/:category', () => {
     })
 
     it('returns status code 404 for a non-existing clothing ID', () => {
-      return request(app)
-        .get('/api/clothing/invalid_id') // Replace 'invalid_id' with a non-existing clothing ID
-        .expect(404)
+      return request(app).get('/api/clothing/invalid_id').expect(404)
     })
+  })
+})
+describe('GET /api/home/top-picks', () => {
+  it('returns status code 200 with random clothing data', () => {
+    return request(app)
+      .get('/api/home/top-picks')
+      .expect(200)
+      .then(({ body }) => {
+        // Assuming body.data is an array of random items
+        expect(Array.isArray(body.data)).toBe(true)
+        expect(body.data.length).toBeGreaterThan(0)
+
+        // Assuming each item in body.data has a structure similar to expectedItem
+        const expectedItemKeys = [
+          'clothing_id',
+          'name',
+          'origin',
+          'size',
+          'category',
+          'price',
+          'photos',
+        ]
+        const receivedItemKeys = Object.keys(body.data[0])
+        expect(receivedItemKeys).toEqual(
+          expect.arrayContaining(expectedItemKeys),
+        )
+      })
   })
 })
