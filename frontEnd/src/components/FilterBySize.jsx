@@ -2,16 +2,7 @@ import { useState } from 'react'
 
 export default function FilterBySize({ setSelectedSize }) {
   const [isDropdownVisible, setDropdownVisible] = useState(false)
-  const sizes = [
-    'UK 6',
-    'UK 8',
-    'UK 10',
-    'UK 12',
-    'UK 14',
-    'UK 16',
-    'UK 18',
-    'UK 20',
-  ]
+  const sizes = ['UK 6', 'UK 8', 'UK 10', 'UK 12', 'UK 14', 'UK 16', 'UK 18']
 
   const handleSizeClick = (size) => {
     setSelectedSize(size)
@@ -27,7 +18,7 @@ export default function FilterBySize({ setSelectedSize }) {
         FILTER BY SIZE
       </button>
       {isDropdownVisible && (
-        <div className="absolute mt-1 w-full border border-gray-500 bg-gray-200 z-50">
+        <div className="absolute mt-1 w-60 text-xl bg-zinc-100 z-50">
           {sizes.map((size) => (
             <div
               key={size}

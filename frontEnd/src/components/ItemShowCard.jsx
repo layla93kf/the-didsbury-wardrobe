@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getItemById } from '../Api'
+import useMediaQuery from '../hooks/useMediaQuery'
 
 export default function ItemList() {
   const { clothing_id } = useParams()

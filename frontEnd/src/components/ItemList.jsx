@@ -70,10 +70,10 @@ export default function ItemList({ isLoading, setIsLoading }) {
         <FilterBySize setSelectedSize={setSelectedSize} />
       </div>
       <ul className="items">
-        <div className="grid grid-cols-2 mb-20 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-6">
+        <div className="grid grid-cols-2 mb-20 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 md:gap-6">
           {filteredItems.map((item) => (
             <Link to={`/api/items/${item.clothing_id}`} key={item.clothing_id}>
-              <li className="item mb-8 p-5">
+              <li className="item mb-8 p-8">
                 <div
                   style={{
                     position: 'relative',
