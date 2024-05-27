@@ -7,11 +7,12 @@ import TopPicks from './TopPicks'
 export default function HowItWorks() {
   return (
     <>
+      <h1 className="text-2xl mt-2  text-center"></h1>
       <TopPicks />
       <div className="flex flex-col justify-center items-center md:mt-2 z-50 ">
         {/* Add margin for medium screens and above */}
         <h1 className="text-2xl mt-2 ">HOW IT WORKS</h1>
-        <div className="flex flex-wrap justify-center items-center mt-2">
+        <div className="flex flex-wrap justify-center items-center">
           <img
             src={stepOne}
             alt="step one"

@@ -2,7 +2,6 @@ import { getItemsByCategory } from '../Api'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import LoadingSpinner from '../components/Loading'
 import FilterBySize from './FilterBySize'
 
 export default function ItemList({ isLoading, setIsLoading }) {
@@ -15,6 +14,7 @@ export default function ItemList({ isLoading, setIsLoading }) {
     getItemsByCategory(category)
       .then((response) => {
         setItemList(response.data)
+        setSelectedSize(null)
         setIsLoading(false)
       })
       .catch((err) => {
@@ -70,10 +70,10 @@ export default function ItemList({ isLoading, setIsLoading }) {
         <FilterBySize setSelectedSize={setSelectedSize} />
       </div>
       <ul className="items">
-        <div className="grid grid-cols-2 mb-20 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 md:gap-6">
+        <div className="grid grid-cols-2 mb-20 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 md:gap-6">
           {filteredItems.map((item) => (
             <Link to={`/api/items/${item.clothing_id}`} key={item.clothing_id}>
-              <li className="item mb-8 p-8">
+              <li className="item mb-8 p-4 md:p-8">
                 <div
                   style={{
                     position: 'relative',
@@ -89,7 +89,6 @@ export default function ItemList({ isLoading, setIsLoading }) {
                   }}
                 >
                   <iframe
-                    loading="lazy"
                     style={{
                       position: 'absolute',
                       width: '100%',
