@@ -14,7 +14,13 @@ const {
 } = require('./controllers/errors.controllers.js')
 
 app.use(express.json())
-app.use(cors())
+app.use(
+  cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }),
+)
 app.get('/api/clothing/:category', getItemByCategory)
 app.get('/api/items/:clothing_id', getItemById)
 app.get('/api/home/top-picks', getRandomItems)

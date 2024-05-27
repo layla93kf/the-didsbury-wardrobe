@@ -6,7 +6,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGBBQidKzI/e1Dqa3DyAd3lZ-rYetSHJw/view?embed',
+      'https://www.canva.com/design/DAGGCsfbCSs/8NraKDRZHnllU57N-lHZdA/view?embed',
   },
   {
     name: 'Black and Gold & Other stories',
@@ -22,9 +22,9 @@ const clothingData = [
     origin: 'Paul Smith',
     size: '10/12',
     category: 'dresses',
-    price: 0.0,
+    price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAF_nl9k9bs/HOSbK4C4pB4JK1PsNxyB0w/view?embed',
+      'https://www.canva.com/design/DAGFyfIGsOY/Yyj0fIoXkIf8-NMIcIfr-A/view?embed',
   },
   {
     name: 'Black Silk Slip',
@@ -45,15 +45,6 @@ const clothingData = [
       'https://www.canva.com/design/DAGFybaWQZ4/Aga8QHZiHzr1qLlXDnaBiw/view?embed',
   },
 
-  {
-    name: 'Black/ Navy with embellished Collar',
-    origin: 'Ted Baker',
-    size: '10',
-    category: 'dresses',
-    price: 'RENT FROM £12',
-    photos:
-      'https://www.canva.com/design/DAGALGNMR34/nnUmiwoVKzAJNttebtCRuw/view?embed',
-  },
   {
     name: 'Vintage Green Oversized Mini',
     origin: 'Paul & Joe',
@@ -106,7 +97,7 @@ const clothingData = [
     category: 'Dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGFs-5COGA/um8aWqUvNf6rlzkq4pP6NA/view?embed',
+      'https://www.canva.com/design/DAGFyb_FuvM/eJI4tnxJC0D_0NWPCBQVcw/view?embed',
   },
   {
     name: 'Black and Floral',
@@ -265,7 +256,7 @@ const clothingData = [
 
   {
     name: 'Navy Puffball Dress',
-    origin: 'UNKNOWN',
+    origin: 'Reiss',
     size: '8',
     category: 'dresses',
     price: 'RENT FROM £0',
