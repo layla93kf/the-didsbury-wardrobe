@@ -108,15 +108,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFyTS1z6g/EB1DLTEBzfYlGYcm68lc6Q/view?embed',
   },
-  {
-    name: 'Embellished Collar Dress',
-    origin: 'Ted Baker',
-    size: '10',
-    category: 'Dresses',
-    price: 'RENT FROM £12',
-    photos:
-      'https://www.canva.com/design/DAGFyVGJM1c/4nYOGKiniHhRfMvAgIYkJQ/view?embed',
-  },
+
   {
     name: 'Black One Shoulder Dress',
     origin: 'COS',
@@ -444,6 +436,96 @@ const clothingData = [
     price: 'RENT FROM £12',
     photos:
       'https://www.canva.com/design/DAGFyW4ei88/6EDFWTj-Ohsa1K0LOoMlVQ/view?embed',
+  },
+  {
+    name: 'Peplum top',
+    origin: 'Ganni',
+    size: '',
+    category: 'tops',
+    price: 'RENT FROM £15',
+    photos:
+      'https://www.canva.com/design/DAGGCgYNfw0/NFqflveo_21kMtz7IOSDgQ/view?embed',
+  },
+  {
+    name: 'Leopard Blouse',
+    origin: 'Damson Madder',
+    size: '',
+    category: 'tops',
+    price: 'RENT FROM £15',
+    photos:
+      'https://www.canva.com/design/DAGGCjV3cMw/5d7VssmAePcieJW8rkxW0Q/view?embed',
+  },
+  {
+    name: 'Side Black Button dress',
+    origin: '& Other Stories',
+    size: '',
+    category: 'dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGGCi-iRz8/hm8tipp5rbGfZ_3bD0RM6w/view?embed',
+  },
+  {
+    name: 'Vintage Leather Jacket',
+    origin: 'All Saints',
+    size: '',
+    category: 'jackets',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGGChhDMTo/s5M4MOxf3rMjsrWoCcCt6A/view?embed',
+  },
+  {
+    name: 'Blue Silk Dress',
+    origin: 'Whistles',
+    size: '',
+    category: 'dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGGCtJR7vA/QsJhWofQoLhsDWNRRCvjzg/view?embed',
+  },
+  {
+    name: 'Sequin Jacket',
+    origin: 'Zara',
+    size: '',
+    category: 'jackets',
+    price: 'RENT FROM £12',
+    photos:
+      'https://www.canva.com/design/DAGGCoWK58s/0xqwOk9mwJE5umAaSpH7Og/view?embed',
+  },
+  {
+    name: 'Black Gathered Dress',
+    origin: 'COS',
+    size: '',
+    category: 'dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGGCoxAjZA/Zsy7ntmTnh62Actns66e6g/view?embed',
+  },
+  {
+    name: 'Blue Patterned Dress',
+    origin: 'Just',
+    size: '',
+    category: 'dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGGCutjWEc/OjuxYSzv55BrKzdekN6Q2w/view?embed',
+  },
+  {
+    name: 'Polka Dot Halter Dress',
+    origin: 'Me & Em',
+    size: '',
+    category: 'dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGGCm8tFbE/DsjbWJzM-jk2iOWZALGYrQ/view?embed',
+  },
+  {
+    name: 'Leopard Ruched Dress',
+    origin: 'All Saints',
+    size: '',
+    category: 'dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGGCoxbjcM/B9Fc_UPgN_8ZQ95hqbK2ww/view?embed',
   },
 ]
 module.exports = clothingData
