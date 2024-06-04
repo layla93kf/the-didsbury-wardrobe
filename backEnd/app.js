@@ -14,7 +14,7 @@ const {
   handleServerErrors,
 } = require('./controllers/errors.controllers.js')
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 app.use(express.json())
 app.use(
