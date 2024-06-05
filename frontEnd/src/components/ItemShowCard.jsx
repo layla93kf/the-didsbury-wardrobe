@@ -99,40 +99,40 @@ export default function ItemList() {
       <div className="flex flex-col">
         {singleItem && (
           <>
-            <div
-              className="relative"
-              style={{
-                flex: '1',
-                position: 'relative',
-                width: '100%',
-                height: '200%',
-                paddingTop: 0,
-                paddingBottom: 0,
-                willChange: 'transform',
-                marginLeft: '130px',
-                marginRight: '60px',
-                marginBottom: '20px',
-              }}
-            >
-              <iframe
-                className="absolute inset-0 "
+            <div className="relative" style={{ marginBottom: '100px' }}>
+              <div
+                className="absolute"
                 style={{
-                  position: 'relative',
-                  width: '40%',
-                  height: '100%',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  border: 'solid',
-                  borderBlockWidth: '1px',
-                  borderColor: 'white',
+                  flex: '1',
+
+                  width: '600px',
+                  height: '200px',
+                  paddingTop: 0,
+                  paddingBottom: 0,
+                  willChange: 'transform',
+                  marginLeft: '30px',
+                  marginRight: '30px',
+                  marginTop: '10px',
                 }}
-                src={singleItem.photos}
-                allowFullScreen="allowfullscreen"
-                allow="fullscreen"
-              ></iframe>
+              >
+                <iframe
+                  className="absolute inset-0 "
+                  style={{
+                    width: '60%',
+                    height: '180%',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    border: 'solid',
+                    borderBlockWidth: '1px',
+                    borderColor: 'white',
+                  }}
+                  src={singleItem.photos}
+                  allowFullScreen="allowfullscreen"
+                ></iframe>
+              </div>
             </div>
-            <div className="flex-1 ml-5 mt-4 md:mt-14 md:ml-4">
+            <div className=" flex-1 ml-5 mt-80 md:mt-14 md:ml-4">
               <h1 className="font-open-sans text-2xl mb-3 uppercase">
                 {singleItem.origin}
               </h1>
