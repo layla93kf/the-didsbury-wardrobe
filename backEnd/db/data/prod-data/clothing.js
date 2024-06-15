@@ -8,15 +8,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFybZvfeI/0guEGM8BvJm7oiS46_dAJQ/view?embed',
   },
-  {
-    name: 'Black Silk Sheer Dress with Slip',
-    origin: 'Paul Smith',
-    size: '10/12',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyfIGsOY/Yyj0fIoXkIf8-NMIcIfr-A/view?embed',
-  },
+
   {
     name: 'Black Silk Slip',
     origin: '& Other Stories',
@@ -90,15 +82,6 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFyb_FuvM/eJI4tnxJC0D_0NWPCBQVcw/view?embed',
   },
-  {
-    name: 'Black and Floral',
-    origin: 'Ted Baker',
-    size: '10',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyTS1z6g/EB1DLTEBzfYlGYcm68lc6Q/view?embed',
-  },
 
   {
     name: 'Black One Shoulder Dress',
@@ -109,43 +92,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFyhPr2LE/rH7cwQcIDE-pdnEXfQjzjg/view?embed',
   },
-  {
-    name: 'Rare London Gold Grecian Dress',
-    origin: 'Rare London',
-    size: '14',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFypyf1PY/3thXGqzS2bOls8vHnkIoYQ/view?embed',
-  },
-  {
-    name: 'Coral Dress',
-    origin: 'Coast',
-    size: '14',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFysttDRs/_IB8lgMy9EQM3yVst1z25Q/view?embed',
-  },
 
-  {
-    name: 'Floral Slate Blue Lace Dress',
-    origin: 'Reiss',
-    size: '12',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyrBrIS4/GKakxePiypcusRW8hdJ23w/view?embed',
-  },
-  {
-    name: 'Black Satin Dress',
-    origin: 'Coast',
-    size: '10',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyicGVbw/pC6JR-8wJXIaSt535K62GA/view?embed',
-  },
   {
     name: 'Multi Midi',
     origin: 'Numph',
@@ -155,15 +102,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFydbnpM0/oot8yh-JXJunCzj5sbx50A/view?embed',
   },
-  {
-    name: 'Blue Sequin Dress',
-    origin: 'French Connection',
-    size: '10',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyuLs_tQ/uH4owmgK7QgPgMUGxUCxcA/view?embed',
-  },
+
   {
     name: 'Tea Dress',
     origin: 'DKNY',
@@ -246,24 +185,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFyRfYlns/S1VZA8HOCI73ITZt-UlF8A/view?embed',
   },
-  {
-    name: 'Back Lace Dress',
-    origin: 'Reiss',
-    size: '14',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFye9Jeac/ctK9nSHcUs7t9JiXmFonBw/view?embed',
-  },
-  {
-    name: 'Black Ruched Dress',
-    origin: 'John Rocha',
-    size: '12',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyaUhqxU/E-IBIihFcSoPHgkOINGPtA/view?embed',
-  },
+
   {
     name: 'Navy Dress',
     origin: 'Vera Wang',
@@ -273,15 +195,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFyWvj3BA/xQX3esRDdWXIBLdB4nRl9w/view?embed',
   },
-  {
-    name: 'Midi Jacket',
-    origin: 'COS',
-    size: '8',
-    category: 'jackets',
-    price: 'RENT FROM £12',
-    photos:
-      'https://www.canva.com/design/DAGFyYM3NEQ/MxSHUoveTb7PwAUh5OUzOw/view?embed',
-  },
+
   {
     name: 'Pink Alesha Dress',
     origin: 'Never Fully Dressed',
@@ -363,15 +277,6 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFyT_5VVo/ZAcMLy_PmZio3z0SPKn7yw/view?embed',
   },
-  {
-    name: 'Ted Baker Maxi',
-    origin: 'Ted Baker',
-    size: '12',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyQqb6Bo/j2Iikb4FpKJtSN7vrT4aqg/view?embed',
-  },
 
   {
     name: 'Red Silk Dress',
@@ -418,15 +323,6 @@ const clothingData = [
     price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAGFye3Sv9k/sYQX6KmYzXmSlczw0UH8FQ/view?embed',
-  },
-  {
-    name: 'Cream Long Backless Dress',
-    origin: 'Unknown',
-    size: '6',
-    category: 'dresses',
-    price: 'RENT FROM £12',
-    photos:
-      'https://www.canva.com/design/DAGFyW4ei88/6EDFWTj-Ohsa1K0LOoMlVQ/view?embed',
   },
   {
     name: 'Peplum top',
@@ -617,24 +513,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGGCthNm6U/Y3kELhci6ftWNf2yAZKjKQ/view',
   },
-  {
-    name: 'Green Layered Shift Dress',
-    origin: 'Reiss',
-    size: '14',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGGClokNWI/gugOwe5yf8GejpERF6X02w/view',
-  },
-  {
-    name: 'Remi Layered Lace Dress',
-    origin: 'Reiss',
-    size: '12',
-    category: 'dresses',
-    price: 'RENT FROM £30',
-    photos:
-      'https://www.canva.com/design/DAGGCjhPpxg/lZsotJC_SsOSxAivFSq1eg/view',
-  },
+
   {
     name: 'Waterfall Mesh Dress Black',
     origin: 'Waterfall',
@@ -734,15 +613,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGGCk6EzAM/DNEKVDI_Bjnrt9rAaY74fw/view',
   },
-  {
-    name: 'Textured Asymmetric Dress',
-    origin: 'Whistles',
-    size: '12',
-    category: 'dresses',
-    price: 'RENT FROM £15',
-    photos:
-      'https://www.canva.com/design/DAGGCttzqVI/wYeF3Xm7f823uJqccG0uSg/view',
-  },
+
   {
     name: 'Orange Pleated Skirt',
     origin: 'Whistles',
@@ -779,15 +650,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGGClLyUjc/laNWM7fLI1Zlp0FOsKAXPQ/view?embed',
   },
-  {
-    name: 'Lace Jumpsuit',
-    origin: 'Unknown',
-    size: '12',
-    category: 'jumpsuits',
-    price: 'RENT FROM £15',
-    photos:
-      'https://www.canva.com/design/DAGGCvAI-tA/hZtUbOomSuE3oBu2DwIIhA/view?embed',
-  },
+
   {
     name: 'Mini Patterned Dress',
     origin: 'Numph',
@@ -797,15 +660,7 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGGCj7wDu4/NeQoyQWdBIReuKJnQsl-YA/view?embed',
   },
-  {
-    name: 'Denim Midi',
-    origin: 'Whistles',
-    size: '12',
-    category: 'dresses',
-    price: 'RENT FROM £12',
-    photos:
-      'https://www.canva.com/design/DAGGCnwzuJE/nUd6o6wOznRf1o3gi8wRDw/view?embed',
-  },
+
   {
     name: 'Back Flare Dress',
     origin: 'Whistles',
