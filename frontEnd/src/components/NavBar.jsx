@@ -1,16 +1,16 @@
-import useMediaQuery from '../hooks/useMediaQuery'
-import { useState } from 'react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid'
+import useMediaQuery from '../hooks/useMediaQuery';
+import { useState } from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-  const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
-  const [isMenuToggled, setIsMenuToggled] = useState(false)
+  const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
 
   const closeMenu = () => {
-    setIsMenuToggled(false)
-  }
+    setIsMenuToggled(false);
+  };
 
   if (isAboveMediumScreens) {
     return (
@@ -24,15 +24,21 @@ const NavBar = () => {
               <Link to="/api/clothing/jumpsuits"> Jumpsuits </Link>
             </div>
             <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+              <Link to="/api/clothing/tops">Tops </Link>
+            </div>
+            <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
               <Link to="/api/clothing/jackets"> Jackets & Blazers </Link>
             </div>
             <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
               <Link to="/api/clothing/skirts"> Skirts </Link>
             </div>
+            <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+              <Link to="/api/clothing/accessories"> Accessories </Link>
+            </div>
           </div>
         </div>
       </div>
-    )
+    );
   } else if (!isAboveMediumScreens && isMenuToggled) {
     return (
       <div className="fixed left-0 bottom-0 z-50 h-full w-[200px] bg-primary-100 drop-shadow-xl bg-zinc-100">
@@ -60,6 +66,13 @@ const NavBar = () => {
             Jumpsuits
           </Link>
           <Link
+            to="/api/clothing/tops"
+            className="border-b pb-1 text-xl mt-2"
+            onClick={closeMenu}
+          >
+            Tops
+          </Link>
+          <Link
             to="/api/clothing/jackets"
             className="border-b pb-1 text-xl mt-2"
             onClick={closeMenu}
@@ -73,9 +86,16 @@ const NavBar = () => {
           >
             Skirts
           </Link>
+          <Link
+            to="/api/clothing/accessories"
+            className="border-b pb-1 text-xl mt-2"
+            onClick={closeMenu}
+          >
+            Accessories
+          </Link>
         </div>
       </div>
-    )
+    );
   } else {
     return (
       <button
@@ -84,8 +104,8 @@ const NavBar = () => {
       >
         <Bars3Icon className="h-8 w-8 text-black " />
       </button>
-    )
+    );
   }
-}
+};
 
-export default NavBar
+export default NavBar;

@@ -1,34 +1,34 @@
-import { getItemsByCategory } from '../Api'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import FilterBySize from './FilterBySize'
+import { getItemsByCategory } from '../Api';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import FilterBySize from './FilterBySize';
 
 export default function ItemList({ isLoading, setIsLoading }) {
-  const [itemList, setItemList] = useState([])
-  const { category } = useParams()
-  const [selectedSize, setSelectedSize] = useState(null)
+  const [itemList, setItemList] = useState([]);
+  const { category } = useParams();
+  const [selectedSize, setSelectedSize] = useState(null);
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     getItemsByCategory(category)
       .then((response) => {
-        setItemList(response.data)
-        setSelectedSize(null)
-        setIsLoading(false)
+        setItemList(response.data);
+        setSelectedSize(null);
+        setIsLoading(false);
       })
       .catch((err) => {
-        setIsLoading(false)
-        return err
-      })
-  }, [category])
+        setIsLoading(false);
+        return err;
+      });
+  }, [category]);
 
   const capitalisedCategory =
-    category.charAt(0).toUpperCase() + category.slice(1)
+    category.charAt(0).toUpperCase() + category.slice(1);
 
   const filteredItems = selectedSize
     ? itemList.filter((item) => `UK ${item.size}` === selectedSize)
-    : itemList
+    : itemList;
 
   return isLoading ? (
     <>
@@ -58,7 +58,7 @@ export default function ItemList({ isLoading, setIsLoading }) {
     <div className="item">
       <div className="bg-stone-100  text-center h-100 pt-12 pb-10">
         <h2 className="text-3xl mb-2 ">Rent Women's {capitalisedCategory}</h2>
-        <h3 className="text-lg  ">
+        <h3 className="text-lg ml-4 mr-4 ">
           Discover the latest rental pieces from top brands and labels at The
           Didsbury Wardrobe.
         </h3>
@@ -116,5 +116,5 @@ export default function ItemList({ isLoading, setIsLoading }) {
         </div>
       </ul>
     </div>
-  )
+  );
 }
