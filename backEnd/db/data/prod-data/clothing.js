@@ -823,5 +823,131 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGIN2YQqSw/H84IPGG4LJaTEIgr2lVFMA/view?embed',
   },
+  {
+    name: 'Vintage Jacket',
+    origin: 'Hera',
+    size: 'ALL',
+    category: 'jackets',
+    price: 'RENT FROM £35',
+    photos:
+      'https://www.canva.com/design/DAGIN3RWyX0/nDgAZRTBouItw7CFPLWsdg/view?embed',
+  },
+  {
+    name: 'Roya Orange Halter Pleat',
+    origin: 'Reiss',
+    size: '10',
+    category: 'dresses',
+    price: 'RENT FROM £35',
+    photos:
+      'https://www.canva.com/design/DAGIN9PGQBc/LdXxdgK2VwsHUyUh_Kzv0Q/view?embed',
+  },
+  {
+    name: 'South West Lace Maxi Dress',
+    origin: 'Free People',
+    size: '8',
+    category: 'dresses',
+    price: 'RENT FROM £25',
+    photos:
+      'https://www.canva.com/design/DAGIN8ePVWQ/vZDBYwoAmNq542JYe97VxQ/view?embed',
+  },
+  {
+    name: 'Plunge Midi',
+    origin: 'Topshop',
+    size: '8',
+    category: 'dresses',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGIN3XjBGo/Jvo6cDlNS7PDGuBJMjIFuA/view?embed',
+  },
+  {
+    name: 'Yellow Midi',
+    origin: 'Rotate Birger Christensen ',
+    size: '10',
+    category: 'dresses',
+    price: 'RENT FROM £45',
+    photos:
+      'https://www.canva.com/design/DAGIN7sZeow/wKRk0wnSuJavIwISdGO3eQ/view?embed',
+  },
+  {
+    name: 'White Slip',
+    origin: 'All Saints',
+    size: '8',
+    category: 'dresses',
+    price: 'RENT FROM £25',
+    photos:
+      'https://www.canva.com/design/DAGIN2mYW2w/qsteJE15QLMe7jawQn6uuQ/view?embed',
+  },
+  {
+    name: 'Glamgz Dress',
+    origin: 'Gestuz ',
+    size: '10',
+    category: 'dresses',
+    price: 'RENT FROM £30',
+    photos:
+      'https://www.canva.com/design/DAGIN4EDuww/6x9Oq-5wQzBrE8A-c7Or9w/view?embed',
+  },
+  {
+    name: 'Long Grey Floral Poly Dress',
+    origin: 'Acne',
+    size: '8',
+    category: 'dresses',
+    price: 'RENT FROM £25',
+    photos:
+      'https://www.canva.com/design/DAGINzjT7II/G0dR3EjStiWh95QyIywRMw/view?embed',
+  },
+  {
+    name: 'Cream T-Shirt',
+    origin: 'Magda Butrym',
+    size: '14',
+    category: 'tops',
+    price: 'RENT FROM £50',
+    photos:
+      'https://www.canva.com/design/DAGINxQYe_w/craDZawhf-zQDJXQ6wxKEQ/view?embed',
+  },
+  {
+    name: 'Beaded Top',
+    origin: 'Matthew Willamson',
+    size: '12',
+    category: 'tops',
+    price: 'RENT FROM £35',
+    photos:
+      'https://www.canva.com/design/DAGIN4FIooI/Sbpztyy1bjjTF7VD-zgqrQ/view?embed',
+  },
+  {
+    name: 'Maxi Dress',
+    origin: 'Sika',
+    size: '10',
+    category: 'dresses',
+    price: 'RENT FROM £45',
+    photos:
+      'https://www.canva.com/design/DAGINz5bvWk/XKwXFKHNSyoTuuQsI-_nxA/view?embed',
+  },
+  {
+    name: 'Floral and Gold Dress',
+    origin: 'The Kooples',
+    size: '12',
+    category: 'dresses',
+    price: 'RENT FROM £50',
+    photos:
+      'https://www.canva.com/design/DAGIN4KexDE/yMxEbTaEJOv_ibqHY0WJ7g/view?embed',
+  },
+  {
+    name: 'Peter Pan Collar Check Dress',
+    origin: 'Ghospell',
+    size: '8',
+    category: 'dresses',
+    price: 'RENT FROM £25',
+    photos:
+      'https://www.canva.com/design/DAGIN3MyX64/ynWZ_rJCEuLnkfxhDU2eqQ/view?embed',
+  },
+  {
+    name: 'Drape Neck Midi',
+    origin: 'Nordstrom',
+    size: '8',
+    category: 'dresses',
+    price: 'RENT FROM £30',
+    photos:
+      'https://www.canva.com/design/DAGIN3WjpEk/IhLPmVczpKvM9bz63bRgcg/view?embed',
+  },
 ];
 module.exports = clothingData;
