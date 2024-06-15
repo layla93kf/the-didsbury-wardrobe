@@ -1,4 +1,4 @@
-const db = require('../db/connection.js')
+const db = require('../db/connection.js');
 
 exports.fetchItemsByCategory = (category) => {
   const categoryStrings = {
@@ -6,8 +6,10 @@ exports.fetchItemsByCategory = (category) => {
     jackets: 'jackets',
     jumpsuits: 'jumpsuits',
     skirts: 'skirts',
-  }
-  const categoryValue = categoryStrings[category]
+    tops: 'tops',
+    accessories: 'accessories',
+  };
+  const categoryValue = categoryStrings[category];
 
   return db
     .query(`SELECT * FROM clothing WHERE category = $1;`, [categoryValue])
@@ -16,12 +18,12 @@ exports.fetchItemsByCategory = (category) => {
         return Promise.reject({
           status: 404,
           message: 'category not found',
-        })
+        });
       }
 
-      return rows
-    })
-}
+      return rows;
+    });
+};
 
 exports.fetchItemById = (clothingId) => {
   return db
@@ -31,40 +33,40 @@ exports.fetchItemById = (clothingId) => {
         return Promise.reject({
           status: 404,
           message: 'item not found',
-        })
+        });
       }
 
-      return rows
-    })
-}
+      return rows;
+    });
+};
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function generateRandomIds(count, min, max) {
-  const randomIds = []
+  const randomIds = [];
 
   for (let i = 0; i < count; i++) {
-    const randomInt = getRandomInt(min, max)
+    const randomInt = getRandomInt(min, max);
     if (!randomIds.includes(randomInt)) {
-      randomIds.push(randomInt)
+      randomIds.push(randomInt);
     }
   }
-  return randomIds
+  return randomIds;
 }
 
 exports.fetchRandomItems = () => {
-  const randomIds = generateRandomIds(9, 1, 50)
+  const randomIds = generateRandomIds(9, 1, 50);
 
-  const idPlaceholders = randomIds.map((id) => `${id}`).join(', ')
-  console.log(idPlaceholders)
+  const idPlaceholders = randomIds.map((id) => `${id}`).join(', ');
+  console.log(idPlaceholders);
   return db
     .query(`SELECT * FROM clothing WHERE clothing_id IN (${idPlaceholders});`)
     .then(({ rows }) => {
-      console.log(rows)
-      return rows
+      console.log(rows);
+      return rows;
     })
     .catch((err) => {
-      console.log(err)
-    })
-}
+      console.log(err);
+    });
+};

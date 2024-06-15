@@ -85,7 +85,7 @@ const clothingData = [
     name: 'Leopard Midi Dress',
     origin: 'Never Fully Dressed',
     size: '18',
-    category: 'Dresses',
+    category: 'dresses',
     price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAGFyb_FuvM/eJI4tnxJC0D_0NWPCBQVcw/view?embed',
@@ -94,7 +94,7 @@ const clothingData = [
     name: 'Black and Floral',
     origin: 'Ted Baker',
     size: '10',
-    category: 'Dresses',
+    category: 'dresses',
     price: 'RENT FROM £20',
     photos:
       'https://www.canva.com/design/DAGFyTS1z6g/EB1DLTEBzfYlGYcm68lc6Q/view?embed',

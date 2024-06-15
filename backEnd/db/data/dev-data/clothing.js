@@ -35,6 +35,24 @@ const clothingData = [
     photos:
       'https://www.canva.com/design/DAGFs-5COGA/um8aWqUvNf6rlzkq4pP6NA/view?embed',
   },
-]
+  {
+    name: 'Leopard Midi Dress',
+    origin: 'Never Fully Dressed',
+    size: '18',
+    category: 'tops',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGFs-5COGA/um8aWqUvNf6rlzkq4pP6NA/view?embed',
+  },
+  {
+    name: 'Leopard Midi Dress',
+    origin: 'Never Fully Dressed',
+    size: '18',
+    category: 'accessories',
+    price: 'RENT FROM £20',
+    photos:
+      'https://www.canva.com/design/DAGFs-5COGA/um8aWqUvNf6rlzkq4pP6NA/view?embed',
+  },
+];
 
-module.exports = clothingData
+module.exports = clothingData;
