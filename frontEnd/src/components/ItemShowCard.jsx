@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { getItemById } from '../Api'
-import useMediaQuery from '../hooks/useMediaQuery'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getItemById } from '../Api';
+import useMediaQuery from '../hooks/useMediaQuery';
+import { Link } from 'react-router-dom';
 
 export default function ItemList() {
-  const { clothing_id } = useParams()
-  const [singleItem, setSingleItem] = useState({})
-  const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
+  const { clothing_id } = useParams();
+  const [singleItem, setSingleItem] = useState({});
+  const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
 
   useEffect(() => {
     getItemById(clothing_id)
       .then((response) => {
-        setSingleItem(response.data[0])
+        setSingleItem(response.data[0]);
       })
       .catch((err) => {
-        console.error(err)
-      })
-  }, [clothing_id])
+        console.error(err);
+      });
+  }, [clothing_id]);
 
   if (isAboveMediumScreens) {
     return (
@@ -93,7 +93,7 @@ export default function ItemList() {
           </>
         )}
       </div>
-    )
+    );
   } else if (!isAboveMediumScreens) {
     return (
       <div className="flex flex-col">
@@ -142,9 +142,9 @@ export default function ItemList() {
               <div className="bg-zinc-100 p-4 mb-10 w-80 text-sm text-gray-700 ">
                 <p className="mb-4">Worried about fit?</p>
                 <p>
-                  You can come and try on free of charge. You can also try on
-                  multiple items at once to find your perfect outfit for that
-                  special occasion!
+                  You can come and try on for a fee redeemable against the hire.
+                  You can also try on multiple items at once to find your
+                  perfect outfit for that special occasion!
                   <Link to="/">
                     <p className="underline mt-2">
                       Press here to find out how it works.
@@ -166,6 +166,6 @@ export default function ItemList() {
           </>
         )}
       </div>
-    )
+    );
   }
 }

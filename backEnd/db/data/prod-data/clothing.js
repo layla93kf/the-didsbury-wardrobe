@@ -52,7 +52,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGAK3XBcvA/1R8kct9oiio0WwiB5_Dz7A/view?embed',
+      'https://www.canva.com/design/DAGFyVOEiVM/pz-eGL400mUxq_g4GgZmZw/view?embed',
   },
   {
     name: 'Orange Wide Legged Jumpsuit',

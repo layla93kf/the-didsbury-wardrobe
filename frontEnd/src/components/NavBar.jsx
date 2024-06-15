@@ -102,7 +102,7 @@ const NavBar = () => {
         className="rounded-full bg-secondary-500 p-2 mt-4"
         onClick={() => setIsMenuToggled(!isMenuToggled)}
       >
-        <Bars3Icon className="h-8 w-8 text-black " />
+        <Bars3Icon className="h-8 w-8 text-black ml-4" />
       </button>
     );
   }
