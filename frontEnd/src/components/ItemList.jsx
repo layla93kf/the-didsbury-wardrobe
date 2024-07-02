@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import FilterBySize from './FilterBySize';
+import OverlayClickableIframe from './clickableOverlay';
 
 export default function ItemList({ isLoading, setIsLoading }) {
   const [itemList, setItemList] = useState([]);
@@ -16,12 +17,13 @@ export default function ItemList({ isLoading, setIsLoading }) {
     getItemsByCategory(category)
       .then((response) => {
         setItemList(response.data);
-        setSelectedSize(null);
+        setSelectedSize(null); // Reset size filter when items change
+        setCurrentPage(1); // Reset to page 1 whenever items change
         setIsLoading(false);
       })
       .catch((err) => {
         setIsLoading(false);
-        return err;
+        console.error('Error fetching items:', err);
       });
   }, [category]);
 
@@ -38,14 +40,19 @@ export default function ItemList({ isLoading, setIsLoading }) {
     }
   }, [itemList, currentPage, itemsPerPage]);
 
-  // Logic to slice items based on pagination
+  // Filter items by size
+  let filteredItems = itemList;
+
+  if (selectedSize) {
+    filteredItems = itemList.filter(
+      (item) => `UK ${item.size}` === selectedSize,
+    );
+  }
+
+  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = itemList.slice(indexOfFirstItem, indexOfLastItem);
-
-  const filteredItems = selectedSize
-    ? currentItems.filter((item) => `UK ${item.size}` === selectedSize)
-    : currentItems;
+  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -75,70 +82,76 @@ export default function ItemList({ isLoading, setIsLoading }) {
   ) : (
     <div className="item">
       <div className="bg-stone-100 text-center h-100 pt-12 pb-10">
-        <h2 className="text-3xl mb-2 ">Rent Women's {capitalisedCategory}</h2>
-        <h3 className="text-lg ml-4 mr-4 ">
+        <h2 className="text-3xl mb-2">Rent Women's {capitalisedCategory}</h2>
+        <h3 className="text-lg ml-4 mr-4">
           Discover the latest rental pieces from top brands and labels at The
           Didsbury Wardrobe.
         </h3>
       </div>
-      <div
-        className="flex justify-center mt-8 h-screen"
-        style={{ height: '80px', width: '100%' }}
-      >
+      <div className="flex justify-center mt-8" style={{ width: '100%' }}>
         <FilterBySize setSelectedSize={setSelectedSize} />
       </div>
       <ul className="items">
         <div className="grid grid-cols-2 mb-20 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 md:gap-6">
-          {filteredItems.map((item) => (
-            <Link to={`/api/items/${item.clothing_id}`} key={item.clothing_id}>
-              <li className="item p-4 md:p-8">
+          {currentItems.map((item) => (
+            <li className="item mb-5 md:p-4 mt-6" key={item.clothing_id}>
+              <Link
+                to={`/api/items/${item.clothing_id}`}
+                key={item.clothing_id}
+                className="block"
+              >
                 <div
                   style={{
                     position: 'relative',
-                    width: '100%',
-                    height: 0,
-                    paddingTop: '100%',
-                    paddingBottom: 0,
+                    width: '90%',
+                    height: 320,
+                    paddingBottom: '40%',
+                    marginLeft: 10,
                     boxShadow: '1px 1px 1px 1px rgba(63,69,81,0.16)',
-                    marginBottom: '1em',
-                    borderRadius: '8px',
-                    willChange: 'transform',
+                    overflow: 'hidden',
                   }}
                 >
-                  <iframe
+                  <OverlayClickableIframe
+                    src={item.photos}
+                    clothingId={item.clothing_id}
                     style={{
                       position: 'absolute',
-                      width: '100%',
-                      height: '100%',
                       top: 0,
                       left: 0,
-                      border: 'none',
-                      padding: 0,
-                      margin: 0,
+                      width: '100%',
+                      height: '100%',
+                      zIndex: 10,
+                      overflow: 'hidden',
                     }}
-                    src={item.photos}
-                    allowFullScreen
-                    allow="fullscreen"
-                  ></iframe>
-                  <h2 className="font-semibold font-work-sans z-50 mt-3 text-l ml-2 uppercase">
-                    {item.origin}
-                  </h2>
-                  <h5 className="text-sm font-work-sans z-50 mt-1 ml-2">
-                    {item.price}
-                  </h5>
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 10,
+                      left: 10,
+                      zIndex: 20,
+                    }}
+                  >
+                    <h2 className="font-semibold font-work-sans text-l uppercase mt-12">
+                      {item.origin}
+                    </h2>
+                    <h5 className="text-sm font-work-sans mt-1">
+                      {item.price}
+                    </h5>
+                  </div>
                 </div>
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
         </div>
       </ul>
 
       {/* Pagination buttons */}
-      {itemList.length > itemsPerPage && (
+      {filteredItems.length > itemsPerPage && (
         <div className="flex justify-center mt-4 mb-20">
           <nav className="block">
             <ul className="flex pl-0 rounded list-none flex-wrap">
-              {[...Array(Math.ceil(itemList.length / itemsPerPage))].map(
+              {[...Array(Math.ceil(filteredItems.length / itemsPerPage))].map(
                 (_, index) => (
                   <li key={index} className="mx-1">
                     <button

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getItemById } from '../Api';
 import useMediaQuery from '../hooks/useMediaQuery';
 import { Link } from 'react-router-dom';
+import instagramLogo from '../assets/instagramblack.png';
 
 export default function ItemList() {
   const { clothing_id } = useParams();
@@ -25,7 +26,7 @@ export default function ItemList() {
         {singleItem && (
           <>
             <div
-              className="relative w-full md:w-1/2 md:pt-25 md:pr-4"
+              className="relative w-full md:w-1/2 md:pt-25 md:pr-4 pr-2"
               style={{
                 flex: '1',
                 position: 'relative',
@@ -34,6 +35,7 @@ export default function ItemList() {
                 paddingTop: '25%',
                 paddingBottom: 0,
                 willChange: 'transform',
+
                 marginLeft: '50px',
                 marginBottom: '40px',
                 marginTop: '60px',
@@ -52,6 +54,7 @@ export default function ItemList() {
                   borderColor: 'white',
                   padding: 0,
                   margin: 0,
+                  overflow: 'hidden',
                 }}
                 src={singleItem.photos}
                 allowFullScreen="allowfullscreen"
@@ -72,21 +75,21 @@ export default function ItemList() {
                   You can come and try on for a fee redeemable against the hire.
                   You can also try on multiple items at once to find your
                   perfect outfit for that special occasion!
-                  <Link to="/">
-                    <p className="underline mt-2">
-                      Press here to find out how it works.
-                    </p>
-                  </Link>
                 </p>
               </div>
+
               <a
                 href="https://ig.me/m/the_didsbury_wardrobe"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="border-2 mb-10 bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-1/3">
-                  {' '}
-                  Try on or rent
+                <button className="border-2 text-md bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20 flex items-center space-x-2">
+                  <img
+                    src={instagramLogo}
+                    alt="Instagram"
+                    style={{ width: '24px', height: '24px' }}
+                  />
+                  <span>DM to try on or rent</span>
                 </button>
               </a>
             </div>
@@ -96,7 +99,7 @@ export default function ItemList() {
     );
   } else if (!isAboveMediumScreens) {
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-hidden">
         {singleItem && (
           <>
             <div className="relative" style={{ marginBottom: '100px' }}>
@@ -111,7 +114,7 @@ export default function ItemList() {
                   paddingBottom: 0,
                   willChange: 'transform',
                   marginLeft: '30px',
-                  marginRight: '30px',
+
                   marginTop: '10px',
                 }}
               >
@@ -157,9 +160,13 @@ export default function ItemList() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="border-2 text-sm bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20">
-                  {' '}
-                  Try on or rent
+                <button className="border-2 text-sm bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20 flex items-center space-x-2">
+                  <img
+                    src={instagramLogo}
+                    alt="Instagram"
+                    style={{ width: '20px', height: '20px' }}
+                  />
+                  <span>DM to try on or rent</span>
                 </button>
               </a>
             </div>
