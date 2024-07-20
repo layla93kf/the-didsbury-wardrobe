@@ -1,10 +1,13 @@
 import React from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const OverlayClickableIframe = ({ src, clothingId }) => {
+  const navigate = useNavigate();
   const handleOverlayClick = () => {
-    window.location.href = `/api/items/${clothingId}`;
+    navigate(`api/items/${clothingId}`);
   };
+
   const isAboveMediumScreens = useMediaQuery('(min-width: 760px)');
 
   if (isAboveMediumScreens) {

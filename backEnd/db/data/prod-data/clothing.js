@@ -122,15 +122,6 @@ const clothingData = [
       'https://www.canva.com/design/DAGFygytDMw/CcRI2BCFnMHoy5lWlnNzxA/view?embed',
   },
   {
-    name: 'Leopard Midi',
-    origin: 'Never Fully Dressed',
-    size: '18',
-    category: 'dresses',
-    price: 'RENT FROM £20',
-    photos:
-      'https://www.canva.com/design/DAGFyb_FuvM/eJI4tnxJC0D_0NWPCBQVcw/view?embed',
-  },
-  {
     name: 'Blue Dress',
     origin: 'French Connection',
     category: 'dresses',
@@ -502,7 +493,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCtNvcFg/-xtoBP-tz7sr5TiuuOlpIQ/view',
+      'https://www.canva.com/design/DAGGCtNvcFg/-xtoBP-tz7sr5TiuuOlpIQ/view?embed',
   },
   {
     name: 'White Sequin Mini',
@@ -511,7 +502,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £15',
     photos:
-      'https://www.canva.com/design/DAGGCthNm6U/Y3kELhci6ftWNf2yAZKjKQ/view',
+      'https://www.canva.com/design/DAGGCthNm6U/Y3kELhci6ftWNf2yAZKjKQ/view?embed',
   },
 
   {
@@ -521,7 +512,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £15',
     photos:
-      'https://www.canva.com/design/DAGGCk9nqS0/rXuUKH3ywDGZB1RCFYXfww/view',
+      'https://www.canva.com/design/DAGGCk9nqS0/rXuUKH3ywDGZB1RCFYXfww/view?embed',
   },
   {
     name: 'Mustard Scattered Dot Skirt',
@@ -530,7 +521,7 @@ const clothingData = [
     category: 'skirts',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCpW3bwA/bJqdrQ9qNepC_l9mXzf9tg/view',
+      'https://www.canva.com/design/DAGGCpW3bwA/bJqdrQ9qNepC_l9mXzf9tg/view?embed',
   },
   {
     name: 'Green Gold Dress',
@@ -539,7 +530,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCsoHwSs/p5M60WAuBH0sbLrETdiJGg/view',
+      'https://www.canva.com/design/DAGGCsoHwSs/p5M60WAuBH0sbLrETdiJGg/view?embed',
   },
   {
     name: 'Black Mesh Sequin Dress',
@@ -548,7 +539,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCgVZAHA/wvn9PCcH_lMCWmghpiDo1w/view',
+      'https://www.canva.com/design/DAGGCgVZAHA/wvn9PCcH_lMCWmghpiDo1w/view?embed',
   },
   {
     name: 'Water Colour Organza Dress',
@@ -557,7 +548,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCrpnZX0/dn_lzAMfUDsQmIHY8Xgozg/view',
+      'https://www.canva.com/design/DAGGCrpnZX0/dn_lzAMfUDsQmIHY8Xgozg/view?embed',
   },
   {
     name: 'Back Cut Out Dress',
@@ -566,7 +557,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCnsmdq8/MDhkMS3-G-9gUbrsIg7j-g/view',
+      'https://www.canva.com/design/DAGGCnsmdq8/MDhkMS3-G-9gUbrsIg7j-g/view?embed',
   },
   {
     name: 'Black and White Floral Dress',
@@ -575,7 +566,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGChc6klY/jVkvwo2FsRb0eMqWdbE9RQ/view',
+      'https://www.canva.com/design/DAGGChc6klY/jVkvwo2FsRb0eMqWdbE9RQ/view?embed',
   },
   {
     name: 'Juanna Wrap Dress',
@@ -584,7 +575,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCoYnM5E/5kHIlmLxOhUCQJHT1uUULw/view',
+      'https://www.canva.com/design/DAGGCoYnM5E/5kHIlmLxOhUCQJHT1uUULw/view?embed',
   },
   {
     name: 'Beaded Black Dress',
@@ -593,7 +584,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £40',
     photos:
-      'https://www.canva.com/design/DAGGCsUuC-0/-lJwiW8IQeM8kfMr8KXpIw/view',
+      'https://www.canva.com/design/DAGGCsUuC-0/-lJwiW8IQeM8kfMr8KXpIw/view?embed',
   },
   {
     name: 'One Shoulder Jumpsuit',
@@ -602,7 +593,7 @@ const clothingData = [
     category: 'jumpsuits',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCgQokfI/2z_pF2hQXuYqK49LMT30CQ/view',
+      'https://www.canva.com/design/DAGGCgQokfI/2z_pF2hQXuYqK49LMT30CQ/view?embed',
   },
   {
     name: 'Black Brace Jumpsuit',
@@ -611,7 +602,7 @@ const clothingData = [
     category: 'jumpsuits',
     price: 'RENT FROM £15',
     photos:
-      'https://www.canva.com/design/DAGGCk6EzAM/DNEKVDI_Bjnrt9rAaY74fw/view',
+      'https://www.canva.com/design/DAGGCk6EzAM/DNEKVDI_Bjnrt9rAaY74fw/view?embed',
   },
 
   {
@@ -621,7 +612,7 @@ const clothingData = [
     category: 'skirts',
     price: 'RENT FROM £20',
     photos:
-      'https://www.canva.com/design/DAGGCnjRJIw/y2-s0UhvTF78WBHYKAwq3w/view',
+      'https://www.canva.com/design/DAGGCnjRJIw/y2-s0UhvTF78WBHYKAwq3w/view?embed',
   },
   {
     name: 'Red Leopard Dress',
@@ -630,7 +621,7 @@ const clothingData = [
     category: 'dresses',
     price: 'RENT FROM £15',
     photos:
-      'https://www.canva.com/design/DAGGCjdin5M/cuQsVEoWKXgFOCoqCwd8Jg/view',
+      'https://www.canva.com/design/DAGGCjdin5M/cuQsVEoWKXgFOCoqCwd8Jg/view?embed',
   },
   {
     name: 'Navy Slip Dress',
@@ -830,7 +821,7 @@ const clothingData = [
     category: 'jackets',
     price: 'RENT FROM £35',
     photos:
-      'https://www.canva.com/design/DAGIN3RWyX0/nDgAZRTBouItw7CFPLWsdg/view?embed',
+      'https://www.canva.com/design/DAGIN3RWyX0/ADBwxwyYUXSkseNdr9aAtA/view?embed',
   },
   {
     name: 'Roya Orange Halter Pleat',

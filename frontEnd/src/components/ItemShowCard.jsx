@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getItemById } from '../Api';
 import useMediaQuery from '../hooks/useMediaQuery';
-import { Link } from 'react-router-dom';
 import instagramLogo from '../assets/instagramblack.png';
 
-export default function ItemList() {
+export default function ItemShowCard() {
   const { clothing_id } = useParams();
   const [singleItem, setSingleItem] = useState({});
   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
@@ -35,10 +34,10 @@ export default function ItemList() {
                 paddingTop: '25%',
                 paddingBottom: 0,
                 willChange: 'transform',
-
                 marginLeft: '50px',
                 marginBottom: '40px',
                 marginTop: '60px',
+                overflow: 'hidden',
               }}
             >
               <iframe
@@ -69,8 +68,8 @@ export default function ItemList() {
               <p className="mb-3 text-ml">{singleItem.price}</p>
               <p className="text-ml mb-7">UK {singleItem.size}</p>
               <div className="bg-zinc-100 p-4 mb-7 md:w-80 leading-relaxed text-sm text-gray-700">
-                <p className="mb-6">Worried about fit?</p>
-                <p>
+                <h6 className="mb-6">Worried about fit?</h6>
+                <p className="mb-5">
                   {' '}
                   You can come and try on for a fee redeemable against the hire.
                   You can also try on multiple items at once to find your
@@ -99,7 +98,7 @@ export default function ItemList() {
     );
   } else if (!isAboveMediumScreens) {
     return (
-      <div className="flex flex-col overflow-hidden">
+      <div className="flex flex-col w-full overflow-hidden">
         {singleItem && (
           <>
             <div className="relative" style={{ marginBottom: '100px' }}>
@@ -107,14 +106,12 @@ export default function ItemList() {
                 className="absolute"
                 style={{
                   flex: '1',
-
                   width: '600px',
                   height: '200px',
                   paddingTop: 0,
                   paddingBottom: 0,
                   willChange: 'transform',
                   marginLeft: '30px',
-
                   marginTop: '10px',
                 }}
               >
@@ -135,7 +132,7 @@ export default function ItemList() {
                 ></iframe>
               </div>
             </div>
-            <div className=" flex-1 ml-5 mt-80 md:mt-14 md:ml-4">
+            <div className=" flex-1 ml-8 mt-80 md:mt-14 md:ml-4">
               <h1 className="font-open-sans text-2xl mb-3 uppercase">
                 {singleItem.origin}
               </h1>
@@ -143,16 +140,11 @@ export default function ItemList() {
               <p className="mb-3 text-ml">{singleItem.price}</p>
               <p className="text-ml mb-7">UK {singleItem.size}</p>
               <div className="bg-zinc-100 p-4 mb-10 w-80 text-sm text-gray-700 ">
-                <p className="mb-4">Worried about fit?</p>
-                <p>
+                <h6 className="mb-6">Worried about fit?</h6>
+                <p className="mb-5">
                   You can come and try on for a fee redeemable against the hire.
                   You can also try on multiple items at once to find your
                   perfect outfit for that special occasion!
-                  <Link to="/">
-                    <p className="underline mt-2">
-                      Press here to find out how it works.
-                    </p>
-                  </Link>
                 </p>
               </div>
               <a

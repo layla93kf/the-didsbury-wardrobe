@@ -59,14 +59,55 @@ exports.fetchRandomItems = () => {
   const randomIds = generateRandomIds(9, 1, 50);
 
   const idPlaceholders = randomIds.map((id) => `${id}`).join(', ');
-  console.log(idPlaceholders);
+
   return db
     .query(`SELECT * FROM clothing WHERE clothing_id IN (${idPlaceholders});`)
     .then(({ rows }) => {
-      console.log(rows);
       return rows;
     })
     .catch((err) => {
       console.log(err);
+    });
+};
+
+exports.insertNewItem = (body) => {
+  const itemKeys = ['name', 'origin', 'size', 'category', 'price', 'photos'];
+  const newItemsKeys = Object.keys(body);
+
+  const invalidKeys = newItemsKeys.filter((key) => !itemKeys.includes(key));
+
+  if (invalidKeys.length > 0) {
+    return Promise.reject({
+      status: 400,
+      msg: 'you have invalid properties in your request',
+    });
+  }
+  const valuesArr = Object.values(body);
+  return db
+    .query(
+      `INSERT INTO clothing 
+  (name, origin, size, category, price, photos)
+  VALUES ($1, $2, $3, $4, $5, $6)
+  RETURNING*;`,
+      valuesArr,
+    )
+    .then(({ rows }) => {
+      console.log(rows);
+      return rows;
+    });
+};
+
+exports.removeItem = (itemId) => {
+  return db
+    .query(`DELETE FROM clothing WHERE clothing_id = $1 RETURNING*;`, [itemId])
+    .then(({ rows }) => {
+      if (rows.length === 0) {
+        return Promise.reject({
+          status: 404,
+          msg: 'clothing_id does not exist',
+        });
+      }
+
+      return rows;
     });
 };
