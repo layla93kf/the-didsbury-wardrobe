@@ -92,7 +92,6 @@ exports.insertNewItem = (body) => {
       valuesArr,
     )
     .then(({ rows }) => {
-      console.log(rows);
       return rows;
     });
 };
@@ -108,6 +107,6 @@ exports.removeItem = (itemId) => {
         });
       }
 
-      return rows;
+      return rows[0];
     });
 };

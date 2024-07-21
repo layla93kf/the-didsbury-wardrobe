@@ -60,7 +60,7 @@ exports.deleteItem = (req, res, next) => {
 
   removeItem(clothing_id)
     .then((response) => {
-      res.status(204).send({ data: response });
+      res.status(202).send({ data: response });
     })
     .catch((err) => {
       next(err);

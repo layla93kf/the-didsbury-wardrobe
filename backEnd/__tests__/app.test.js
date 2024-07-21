@@ -89,9 +89,19 @@ describe('GET /api/home/top-picks', () => {
     it('returns a 204 status code and no content', () => {
       return request(app)
         .delete('/api/items/4')
-        .expect(204)
+        .expect(202)
         .then(({ body }) => {
-          expect(body).toEqual({});
+          const deletedItem = {
+            clothing_id: 4,
+            name: 'Leopard Midi Dress',
+            origin: 'Never Fully Dressed',
+            size: '18',
+            category: 'Dresses',
+            price: 'RENT FROM £20',
+            photos:
+              'https://www.canva.com/design/DAGFs-5COGA/um8aWqUvNf6rlzkq4pP6NA/view?embed',
+          };
+          expect(body.data).toEqual(deletedItem);
         });
     });
   });
@@ -123,7 +133,6 @@ describe('GET /api/home/top-picks', () => {
         .send(newItem)
         .expect(201)
         .then(({ body }) => {
-          console.log(body);
           expect(body).toMatchObject({ yourNewItem: result });
         });
     });
