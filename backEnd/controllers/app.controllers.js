@@ -59,8 +59,8 @@ exports.deleteItem = (req, res, next) => {
   const { clothing_id } = req.params;
 
   removeItem(clothing_id)
-    .then(() => {
-      res.status(204).send();
+    .then((response) => {
+      res.status(204).send({ data: response });
     })
     .catch((err) => {
       next(err);
