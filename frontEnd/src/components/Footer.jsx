@@ -1,4 +1,5 @@
-import instagramLogo from '../assets/instagram.png'
+import instagramLogo from '../assets/instagram.png';
+import emailIcon from '../assets/emailIconNoBg.png';
 export default function Footer() {
   return (
     <footer className="bottom-0 left-0 w-full bg-zinc-100 shadow-md py-4">
@@ -28,18 +29,30 @@ export default function Footer() {
           <h4 className="mb-2 font-bold font-old-standard text-xl md:text-2xl mt-5">
             Contact
           </h4>
-          <a
-            href="https://ig.me/m/the_didsbury_wardrobe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-4 inline-block"
-          >
-            <img
-              src={instagramLogo}
-              alt="Instagram"
-              style={{ width: '18px', height: '18px' }}
-            />
-          </a>
+          <div className="inline-flex items-center space-x-4">
+            <a
+              href="https://ig.me/m/the_didsbury_wardrobe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-4 inline-block"
+            >
+              <img
+                src={instagramLogo}
+                alt="Instagram"
+                style={{ width: '20px', height: '20px' }}
+              />
+            </a>
+            <a
+              href="mailto:Thedidsburywardrobe@gmail.com"
+              className="ml-2 mb-4 inline-block"
+            >
+              <img
+                src={emailIcon}
+                alt="email"
+                style={{ width: '34px', height: '34px' }}
+              />
+            </a>
+          </div>
         </div>
         <div className="w-full text-center mt-4">
           <p className="text-xs md:text-sm">
@@ -48,5 +61,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
