@@ -50,7 +50,6 @@ exports.putItem = (req, res, next) => {
       res.status(201).send({ yourNewItem: response });
     })
     .catch((err) => {
-      console.log(err);
       next(err);
     });
 };

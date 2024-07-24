@@ -92,6 +92,14 @@ exports.insertNewItem = (body) => {
       valuesArr,
     )
     .then(({ rows }) => {
+      for (const key in rows[0]) {
+        if (rows[0][key] === '') {
+          return Promise.reject({
+            status: 400,
+            msg: 'Your item is missing information, it has not been added to the database.',
+          });
+        }
+      }
       return rows;
     });
 };
@@ -103,7 +111,7 @@ exports.removeItem = (itemId) => {
       if (rows.length === 0) {
         return Promise.reject({
           status: 404,
-          msg: 'clothing_id does not exist',
+          msg: 'Clothing ID does not exist',
         });
       }
 

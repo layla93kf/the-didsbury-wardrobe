@@ -104,6 +104,14 @@ describe('GET /api/home/top-picks', () => {
           expect(body.data).toEqual(deletedItem);
         });
     });
+    it('DELETE: returns 404 status code if tries to delete a comment_id that does not exist', () => {
+      return request(app)
+        .delete('/api/items/111111')
+        .expect(404)
+        .then(({ body }) => {
+          expect(body.msg).toBe('Clothing ID does not exist');
+        });
+    });
   });
 
   describe('POST /api/clothing/:category', () => {
@@ -136,5 +144,25 @@ describe('GET /api/home/top-picks', () => {
           expect(body).toMatchObject({ yourNewItem: result });
         });
     });
+  });
+  it('returns a 400 status code and the key missing', () => {
+    const newItem = {
+      name: 'Blue Dress',
+      origin: 'Topshop',
+      size: '',
+      category: 'dresses',
+      price: 'RENT FROM £20',
+      photos: 'https://www.testurl.com',
+    };
+
+    return request(app)
+      .post('/api/clothing/dresses')
+      .send(newItem)
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe(
+          'Your item is missing information, it has not been added to the database.',
+        );
+      });
   });
 });

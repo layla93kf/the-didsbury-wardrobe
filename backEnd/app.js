@@ -11,9 +11,8 @@ const {
 const cors = require('cors');
 
 const {
-  handlePSQLErrors,
+  handleSQLErrors,
   handleCustomErrors,
-  handleServerErrors,
 } = require('./controllers/errors.controllers.js');
 
 app.use(express.json());
@@ -38,10 +37,14 @@ app.delete('/api/items/:clothing_id', deleteItem);
 
 //error handling
 
-app.use(handlePSQLErrors, handleCustomErrors, handleServerErrors);
+app.use(handleCustomErrors);
+app.use(handleSQLErrors);
+app.all('/*', (req, res, next) => {
+  res.status(404).send({ msg: 'Not found' });
+});
 
-app.all('/api/*', (req, res, next) => {
-  res.status(404).send({ msg: 'Path not found!' });
+app.use((err, req, res, next) => {
+  res.status(500).send({ msg: 'Internal server error' });
 });
 
 module.exports = { app };
