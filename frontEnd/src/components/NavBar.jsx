@@ -29,7 +29,7 @@ const NavBar = () => {
               <Link to="/api/clothing/jackets"> Jackets & Blazers </Link>
             </div>
             <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
-              <Link to="/api/clothing/skirts"> Skirts </Link>
+              <Link to="/api/clothing/skirts"> Skirts & Trousers</Link>
             </div>
             <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
               <Link to="/api/clothing/accessories"> Accessories </Link>

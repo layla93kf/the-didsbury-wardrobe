@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { deleteItem, postItem } from '../../Api';
+import { deleteItem, postItem } from '../Api';
 
 export default function WardrobeManager() {
   const categories = ['dresses', 'jackets', 'tops', 'jumpsuits', 'accessories'];
@@ -16,7 +16,7 @@ export default function WardrobeManager() {
   });
 
   const [itemAdded, setItemAdded] = useState(false);
-  const [error, setError] = useState(false);
+
   const [itemAddedMsg, setItemAddedMsg] = useState('');
   const [deleteMessage, setDeleteMessage] = useState('');
 
@@ -158,7 +158,7 @@ export default function WardrobeManager() {
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm border h-10"
             />
           </div>
-          <h5>{error ? 'This item does not exist' : itemAddedMsg}</h5>
+          <h5>{itemAddedMsg}</h5>
           <button
             type="submit"
             className="mt-4 px-4 py-2 bg-zinc-600 text-white rounded-md"

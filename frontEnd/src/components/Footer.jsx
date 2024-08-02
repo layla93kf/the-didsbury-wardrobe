@@ -38,7 +38,7 @@ export default function Footer() {
             >
               <img
                 src={instagramLogo}
-                alt="Instagram"
+                alt="instagram"
                 style={{ width: '20px', height: '20px' }}
               />
             </a>

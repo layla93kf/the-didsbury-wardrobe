@@ -8,7 +8,7 @@ import ItemList from './components/ItemList';
 import Footer from './components/Footer';
 import ItemShowCard from './components/ItemShowCard';
 import { useState } from 'react';
-import WardrobeManager from './components/WardrobeManager/WardrobeManager';
+import WardrobeManager from './components/WardrobeManager';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
