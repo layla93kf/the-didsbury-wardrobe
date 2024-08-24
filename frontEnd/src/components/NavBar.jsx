@@ -90,7 +90,7 @@ const NavBar = () => {
                   className="border-b pb-1 text-xl mt-2"
                   onClick={closeMenu}
                 >
-                  Skirts
+                  Skirts & Trousers
                 </Link>
                 <Link
                   to="/api/clothing/accessories"

@@ -65,11 +65,9 @@ describe('GET /api/home/top-picks', () => {
       .get('/api/home/top-picks')
       .expect(200)
       .then(({ body }) => {
-        // Assuming body.data is an array of random items
         expect(Array.isArray(body.data)).toBe(true);
         expect(body.data.length).toBeGreaterThan(0);
 
-        // Assuming each item in body.data has a structure similar to expectedItem
         const expectedItemKeys = [
           'clothing_id',
           'name',

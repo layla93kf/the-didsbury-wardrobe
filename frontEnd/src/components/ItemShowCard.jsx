@@ -41,6 +41,7 @@ export default function ItemShowCard() {
               }}
             >
               <iframe
+                title="item"
                 className="absolute inset-0 w-full h-full md:relative md:w-[53%] md:h-full md:top-0 md:left-[270px] md:border md:border-white"
                 style={{
                   position: 'absolute',
@@ -116,6 +117,7 @@ export default function ItemShowCard() {
                 }}
               >
                 <iframe
+                  title="item"
                   className="absolute inset-0 "
                   style={{
                     width: '60%',

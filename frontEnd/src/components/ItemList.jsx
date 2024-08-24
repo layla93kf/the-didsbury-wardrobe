@@ -9,23 +9,23 @@ export default function ItemList({ isLoading, setIsLoading }) {
   const [itemList, setItemList] = useState([]);
   const { category } = useParams();
   const [selectedSize, setSelectedSize] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // Track current page
-  const itemsPerPage = 12; // Number of items per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
   useEffect(() => {
     setIsLoading(true);
     getItemsByCategory(category)
       .then((response) => {
         setItemList(response.data);
-        setSelectedSize(null); // Reset size filter when items change
-        setCurrentPage(1); // Reset to page 1 whenever items change
+        setSelectedSize(null);
+        setCurrentPage(1);
         setIsLoading(false);
       })
       .catch((err) => {
         setIsLoading(false);
         console.error('Error fetching items:', err);
       });
-  }, [category]);
+  }, [category, setIsLoading]);
 
   const capitalisedCategory =
     category.charAt(0).toUpperCase() + category.slice(1);
@@ -60,6 +60,7 @@ export default function ItemList({ isLoading, setIsLoading }) {
   return isLoading ? (
     <div className="flex items-center justify-center h-screen">
       <div role="status">
+        {/*Spinner*/}
         <svg
           aria-hidden="true"
           className="w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
@@ -82,7 +83,15 @@ export default function ItemList({ isLoading, setIsLoading }) {
   ) : (
     <div className="item">
       <div className="bg-stone-100 text-center h-100 pt-12 pb-10">
-        <h2 className="text-3xl mb-2">Rent Women's {capitalisedCategory}</h2>
+        <div>
+          {category.toLowerCase() === 'skirts' ? (
+            <h2 className="text-3xl mb-2">Rent Women's Skirts & Trousers</h2>
+          ) : (
+            <h2 className="text-3xl mb-2">
+              Rent Women's {capitalisedCategory}
+            </h2>
+          )}
+        </div>
         <h3 className="text-lg ml-4 mr-4">
           Discover the latest rental pieces from top brands and labels at The
           Didsbury Wardrobe.
@@ -109,6 +118,7 @@ export default function ItemList({ isLoading, setIsLoading }) {
                     marginLeft: 10,
                     boxShadow: '1px 1px 1px 1px rgba(63,69,81,0.16)',
                     overflow: 'hidden',
+                    keepAlive: true,
                   }}
                 >
                   <OverlayClickableIframe
@@ -122,6 +132,7 @@ export default function ItemList({ isLoading, setIsLoading }) {
                       height: '100%',
                       zIndex: 10,
                       overflow: 'hidden',
+                      keepAlive: true,
                     }}
                   />
                   <div

@@ -17,12 +17,12 @@ export default function WardrobeManager() {
     name: '',
     origin: '',
     size: '',
-    category: categories[0],
+    category: '',
     price: '',
     photos: '',
   });
 
-  const [itemAdded, setItemAdded] = useState(false);
+  const [setItemAdded] = useState(false);
 
   const [itemAddedMsg, setItemAddedMsg] = useState('');
   const [deleteMessage, setDeleteMessage] = useState('');
@@ -114,6 +114,7 @@ export default function WardrobeManager() {
               name="size"
               value={itemData.size}
               onChange={handleChange}
+              required
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm border h-10"
             >
               <option value="">Select a size</option>{' '}
@@ -147,6 +148,9 @@ export default function WardrobeManager() {
               required
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm border h-10"
             >
+              {' '}
+              <option value="">Select a category</option>{' '}
+              {/* Default blank option */}
               {categories.map((category) => (
                 <option key={category} value={category}>
                   {category}

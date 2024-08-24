@@ -1,9 +1,3 @@
-// import one from '../assets/Top-picks/1.png'
-// import two from '../assets/Top-picks/2.png'
-// import three from '../assets/Top-picks/4.png'
-// import four from '../assets/Top-picks/7.png'
-// import five from '../assets/Top-picks/8.png'
-// import six from '../assets/Top-picks/9.png'
 import { useState, useEffect } from 'react';
 import { getRandomItems } from '../Api';
 

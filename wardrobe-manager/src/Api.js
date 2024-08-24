@@ -7,7 +7,6 @@ export const postItem = (item, category) => {
   return axios
     .post(path, item)
     .then((response) => {
-      console.log(response, 'HERE');
       return response;
     })
     .catch((err) => {
@@ -22,11 +21,9 @@ export const deleteItem = (clothing_id) => {
   return axios
     .delete(path)
     .then((response) => {
-      console.log(response, 'API RES');
-      return response.data.data;
+      return response;
     })
     .catch((err) => {
-      console.log(err);
       return err;
     });
 };

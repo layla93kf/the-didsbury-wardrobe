@@ -1,6 +1,6 @@
 import React from 'react';
 import useMediaQuery from '../hooks/useMediaQuery';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const OverlayClickableIframe = ({ src, clothingId }) => {
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const OverlayClickableIframe = ({ src, clothingId }) => {
         ></div>
 
         <iframe
+          title="image-overlay"
           style={{
             position: 'relative',
             width: 250,
@@ -38,6 +39,7 @@ const OverlayClickableIframe = ({ src, clothingId }) => {
         ></div>
 
         <iframe
+          title="image-overlay"
           style={{
             position: 'relative',
             width: 190,

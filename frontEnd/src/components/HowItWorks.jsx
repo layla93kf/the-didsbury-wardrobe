@@ -1,13 +1,13 @@
-import stepOne from '../assets/How-It-Works-Info/1.png'
-import stepTwo from '../assets/How-It-Works-Info/2.png'
-import stepThree from '../assets/How-It-Works-Info/3.png'
-import stepFour from '../assets/How-It-Works-Info/4.png'
-import TopPicks from './TopPicks'
+import stepOne from '../assets/How-It-Works-Info/1.png';
+import stepTwo from '../assets/How-It-Works-Info/2.png';
+import stepThree from '../assets/How-It-Works-Info/3.png';
+import stepFour from '../assets/How-It-Works-Info/4.png';
+import TopPicks from './TopPicks';
 
 export default function HowItWorks() {
   return (
     <>
-      <h1 className="text-2xl mt-2  text-center"></h1>
+      <div className="text-2xl mt-2  text-center"></div>
       <TopPicks />
       <div className="flex flex-col justify-center items-center md:mt-2 z-50 ">
         {/* Add margin for medium screens and above */}
@@ -42,5 +42,5 @@ export default function HowItWorks() {
         </h1>
       </div>
     </>
-  )
+  );
 }

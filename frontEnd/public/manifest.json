@@ -1,7 +1,6 @@
 {
   "short_name": "the-didsbury-wardrobe",
   "name": "the-didsbury-wardrobe",
-  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
