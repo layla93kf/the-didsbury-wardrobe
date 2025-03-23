@@ -1,5 +1,6 @@
 const db = require('../db/connection.js');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 exports.fetchItemsByCategory = (category) => {
   const categoryStrings = {
@@ -138,11 +139,11 @@ exports.sendRequest = async (rentalRequest) => {
   // const address = `${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}`;
 
   const info = await transporter.sendMail({
-    from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // sender address
-    to: 'layla.kawafi@hotmail.com',
+    from: process.env.OUTLOOK_EMAIL,
+    to: 'layla93k@gmail.com',
     subject: `New Rental Request from ${nameOfSender}!`, // Subject line
     text: message,
     // html: '<b>Hello world?</b>', // html body
   });
-  console.log(info.response);
+  console.log('Email sent:', info.response);
 };
