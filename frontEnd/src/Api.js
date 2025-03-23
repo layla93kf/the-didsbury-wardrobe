@@ -66,3 +66,15 @@ export const deleteItem = (clothing_id) => {
       return err;
     });
 };
+
+export const sendRequestForm = (formData) => {
+  let path = 'https://the-didsbury-wardrobe-3.onrender.com/api/emailRequest';
+  return axios
+    .post(path, formData)
+    .then((response) => {
+      return response.data.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};

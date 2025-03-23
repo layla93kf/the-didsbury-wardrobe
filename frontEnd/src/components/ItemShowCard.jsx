@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getItemById } from '../Api';
 import useMediaQuery from '../hooks/useMediaQuery';
-import instagramLogo from '../assets/instagramblack.png';
+import Modal from './FormModal';
 
 export default function ItemShowCard() {
   const { clothing_id } = useParams();
   const [singleItem, setSingleItem] = useState({});
   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     getItemById(clothing_id)
@@ -78,20 +79,16 @@ export default function ItemShowCard() {
                 </p>
               </div>
 
-              <a
-                href="https://ig.me/m/the_didsbury_wardrobe"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setShowModal(true)}
+                className="border-2 text-md bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20 flex items-center space-x-2"
               >
-                <button className="border-2 text-md bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20 flex items-center space-x-2">
-                  <img
-                    src={instagramLogo}
-                    alt="Instagram"
-                    style={{ width: '24px', height: '24px' }}
-                  />
-                  <span>DM to try on or rent</span>
-                </button>
-              </a>
+                <span>Rent Now</span>
+              </button>
+
+              {showModal && (
+                <Modal onClose={() => setShowModal(false)} item={singleItem} />
+              )}
             </div>
           </>
         )}
@@ -149,20 +146,16 @@ export default function ItemShowCard() {
                   perfect outfit for that special occasion!
                 </p>
               </div>
-              <a
+              {/* <a
                 href="https://ig.me/m/the_didsbury_wardrobe"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <button className="border-2 text-sm bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20 flex items-center space-x-2">
-                  <img
-                    src={instagramLogo}
-                    alt="Instagram"
-                    style={{ width: '20px', height: '20px' }}
-                  />
-                  <span>DM to try on or rent</span>
-                </button>
-              </a>
+              > */}
+              <button className="border-2 text-sm bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20 flex items-center space-x-2">
+                <span>Rent Now</span>
+              </button>
+              <Modal onClose={() => setShowModal(false)} />
+              {/* </a> */}
             </div>
           </>
         )}

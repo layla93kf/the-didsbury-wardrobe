@@ -8,7 +8,6 @@ import ItemList from './components/ItemList';
 import Footer from './components/Footer';
 import ItemShowCard from './components/ItemShowCard';
 import { useState } from 'react';
-import WardrobeManager from './components/WardrobeManager';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,10 +29,6 @@ function App() {
             }
           />
           <Route path="/api/items/:clothing_id" element={<ItemShowCard />} />
-          <Route
-            path="/api/wardrobemanager/20lsntdw24"
-            element={<WardrobeManager />}
-          />
         </Routes>
       </div>
       <Footer />
