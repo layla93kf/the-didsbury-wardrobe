@@ -68,7 +68,7 @@ export const deleteItem = (clothing_id) => {
 };
 
 export const sendRequestForm = (formData) => {
-  let path = 'https://the-didsbury-wardrobe-3.onrender.com/api/emailRequest';
+  let path = 'https://the-didsbury-wardrobe-3.onrender.com/api/email-request';
   return axios
     .post(path, formData)
     .then((response) => {

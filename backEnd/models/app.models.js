@@ -1,4 +1,5 @@
 const db = require('../db/connection.js');
+const nodemailer = require('nodemailer');
 
 exports.fetchItemsByCategory = (category) => {
   const categoryStrings = {
@@ -117,4 +118,31 @@ exports.removeItem = (itemId) => {
 
       return rows[0];
     });
+};
+
+exports.sendRequest = async (rentalRequest) => {
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.OUTLOOK_EMAIL,
+      pass: process.env.OUTLOOK_PASSWORD,
+    },
+  });
+
+  const nameOfSender = rentalRequest.fullName;
+
+  const message = `A rental request has come in from ${rentalRequest.fullName}. They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Send an email to ${rentalRequest.email} to confirm the rental.`;
+
+  // const address = `${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}`;
+
+  const info = await transporter.sendMail({
+    from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // sender address
+    to: 'layla.kawafi@hotmail.com',
+    subject: `New Rental Request from ${nameOfSender}!`, // Subject line
+    text: message,
+    // html: '<b>Hello world?</b>', // html body
+  });
+  console.log(info.response);
 };

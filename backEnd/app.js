@@ -7,6 +7,7 @@ const {
   getRandomItems,
   putItem,
   deleteItem,
+  rentalRequest,
 } = require('./controllers/app.controllers.js');
 const cors = require('cors');
 
@@ -31,7 +32,7 @@ app.get('/api/home/top-picks', getRandomItems);
 
 //POST
 app.post('/api/clothing/:category', putItem);
-
+app.post('/api/email-request', rentalRequest);
 //DELETE
 app.delete('/api/items/:clothing_id', deleteItem);
 

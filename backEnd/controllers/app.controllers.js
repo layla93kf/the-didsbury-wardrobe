@@ -65,3 +65,14 @@ exports.deleteItem = (req, res, next) => {
       next(err);
     });
 };
+
+exports.rentalRequest = (req, res, next) => {
+  const { body } = req;
+  sendRequest(body)
+    .then((response) => {
+      res.status(202).send({ data: response });
+    })
+    .catch((err) => {
+      next(err);
+    });
+};
