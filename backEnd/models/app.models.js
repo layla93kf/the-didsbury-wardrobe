@@ -132,7 +132,7 @@ exports.sendRequest = async (rentalRequest) => {
         pass: process.env.OUTLOOK_PASSWORD,
       },
     });
-
+    console.log('model');
     const nameOfSender = rentalRequest.fullName;
     const message = `A rental request has come in from ${rentalRequest.fullName}. They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Send an email to ${rentalRequest.email} to confirm the rental.`;
 
@@ -143,10 +143,8 @@ exports.sendRequest = async (rentalRequest) => {
       text: message,
     });
 
-    console.log('Email sent:', info.response);
-    return { success: true, message: 'Email sent successfully' };
+    return { msg: 'Email sent successfully' };
   } catch (error) {
-    console.error('Error sending email:', error);
     return {
       success: false,
       message: 'Error sending email',

@@ -3,6 +3,11 @@ const request = require('supertest');
 const db = require('../db/connection.js');
 const seed = require('../db/seeds/seed.js');
 const data = require('../db/data/dev-data/clothing.js');
+const nodemailer = require('nodemailer');
+
+jest.mock('nodemailer', () => ({
+  createTransport: jest.fn(),
+}));
 
 beforeEach(() => {
   return seed(data);
@@ -161,6 +166,39 @@ describe('GET /api/home/top-picks', () => {
         expect(body.msg).toBe(
           'Your item is missing information, it has not been added to the database.',
         );
+      });
+  });
+});
+
+describe('sendRequest', () => {
+  let mockSendMail;
+  let mockTransport;
+
+  beforeEach(() => {
+    mockSendMail = jest.fn().mockResolvedValue({ response: '250 OK' });
+
+    mockTransport = {
+      sendMail: mockSendMail,
+    };
+
+    nodemailer.createTransport.mockReturnValue(mockTransport);
+  });
+  it('returns a 200 status code and email sent successfully', () => {
+    const rentalRequest = {
+      fullName: 'John Doe',
+      item: 'Blue Dress',
+      origin: 'Topshop',
+      startDate: '2025-04-01',
+      endDate: '2025-04-05',
+      email: 'johndoe@example.com',
+    };
+
+    return request(app)
+      .post('/api/email-request')
+      .send(rentalRequest)
+      .expect(202)
+      .then(({ body }) => {
+        expect(body.data.msg).toBe('Email sent successfully');
       });
   });
 });

@@ -4,6 +4,7 @@ const {
   fetchRandomItems,
   removeItem,
   insertNewItem,
+  sendRequest,
 } = require('../models/app.models');
 
 exports.getItemByCategory = (req, res, next) => {
@@ -67,7 +68,9 @@ exports.deleteItem = (req, res, next) => {
 };
 
 exports.rentalRequest = (req, res, next) => {
+  console.log('controller');
   const { body } = req;
+
   sendRequest(body)
     .then((response) => {
       res.status(202).send({ data: response });
