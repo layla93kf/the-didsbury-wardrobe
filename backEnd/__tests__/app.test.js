@@ -3,19 +3,19 @@ const request = require('supertest');
 const db = require('../db/connection.js');
 const seed = require('../db/seeds/seed.js');
 const data = require('../db/data/dev-data/clothing.js');
-const nodemailer = require('nodemailer');
-
-jest.mock('nodemailer', () => ({
-  createTransport: jest.fn(),
-}));
+const axios = require('axios');
+jest.mock('axios');
 
 beforeEach(() => {
   return seed(data);
 });
 
 afterAll(() => {
+  jest.clearAllMocks();
   db.end();
 });
+
+require('dotenv').config();
 
 describe('GET /api/clothing/:category', () => {
   it('returns status code 200 with clothing data depending on category', () => {
@@ -170,35 +170,35 @@ describe('GET /api/home/top-picks', () => {
   });
 });
 
-describe('sendRequest', () => {
-  let mockSendMail;
-  let mockTransport;
+describe('POST /api/send-email', () => {
+  const rentalRequest = {
+    fullName: 'Layla K',
+    email: 'layla.k@hotmail.com',
+    address: '4 Ellesmere Road',
+    city: 'Manchester',
+    postcode: 'M21 0TE',
+    message: 'Hello',
+    dateRange: '12/3/25',
+    item: 'Dress',
+    origin: 'Topshop',
+  };
+  it('should send an email successfully', async () => {
+    axios.post = jest.fn().mockResolvedValue({
+      data: {
+        results: {
+          total_accepted_recipients: 1,
+          total_rejected_recipients: 0,
+          id: '123456789',
+        },
+      },
+    });
 
-  beforeEach(() => {
-    mockSendMail = jest.fn().mockResolvedValue({ response: '250 OK' });
-
-    mockTransport = {
-      sendMail: mockSendMail,
-    };
-
-    nodemailer.createTransport.mockReturnValue(mockTransport);
-  });
-  it('returns a 200 status code and email sent successfully', () => {
-    const rentalRequest = {
-      fullName: 'John Doe',
-      item: 'Blue Dress',
-      origin: 'Topshop',
-      startDate: '2025-04-01',
-      endDate: '2025-04-05',
-      email: 'johndoe@example.com',
-    };
-
-    return request(app)
+    const response = await request(app)
       .post('/api/email-request')
       .send(rentalRequest)
-      .expect(202)
-      .then(({ body }) => {
-        expect(body.data.msg).toBe('Email sent successfully');
-      });
+      .expect(202);
+
+    expect(response.body.data.results.total_accepted_recipients).toBe(1);
+    expect(response.body.data.results.id).toBe('123456789');
   });
 });

@@ -68,7 +68,6 @@ exports.deleteItem = (req, res, next) => {
 };
 
 exports.rentalRequest = (req, res, next) => {
-  console.log('controller');
   const { body } = req;
 
   sendRequest(body)

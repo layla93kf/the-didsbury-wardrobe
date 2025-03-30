@@ -1,5 +1,5 @@
 const db = require('../db/connection.js');
-const nodemailer = require('nodemailer');
+const axios = require('axios');
 require('dotenv').config();
 
 exports.fetchItemsByCategory = (category) => {
@@ -122,28 +122,28 @@ exports.removeItem = (itemId) => {
 };
 
 exports.sendRequest = async (rentalRequest) => {
-  try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.OUTLOOK_EMAIL,
-        pass: process.env.OUTLOOK_PASSWORD,
-      },
-    });
-    console.log('model');
-    const nameOfSender = rentalRequest.fullName;
-    const message = `A rental request has come in from ${rentalRequest.fullName}. They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Send an email to ${rentalRequest.email} to confirm the rental.`;
+  const nameOfSender = rentalRequest.fullName;
+  const message = `A rental request has come in from ${rentalRequest.fullName}. They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Send an email to ${rentalRequest.email} to confirm the rental.`;
 
-    const info = await transporter.sendMail({
-      from: process.env.OUTLOOK_EMAIL,
-      to: 'layla93k@gmail.com',
-      subject: `New Rental Request from ${nameOfSender}!`,
+  const body = {
+    content: {
+      from: 'no-reply@thedidsburywardrobe.uk',
+      subject: `New rental request from ${nameOfSender}!`,
       text: message,
-    });
+    },
+    recipients: [
+      {
+        address: 'layla.kawafi@hotmail.com',
+      },
+    ],
+  };
 
-    return { msg: 'Email sent successfully' };
+  try {
+    const response = await axios.post(
+      'https://api.sparkpost.com/api/v1/transmissions',
+      body,
+    );
+    return response.data;
   } catch (error) {
     return {
       success: false,
