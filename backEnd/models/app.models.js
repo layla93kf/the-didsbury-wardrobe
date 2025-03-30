@@ -137,11 +137,16 @@ exports.sendRequest = async (rentalRequest) => {
       },
     ],
   };
+  const headers = {
+    Authorization: process.env.SPARKPOST_API_KEY,
+    'Content-Type': 'application/json',
+  };
 
   try {
     const response = await axios.post(
       'https://api.sparkpost.com/api/v1/transmissions',
       body,
+      { headers },
     );
     return response.data;
   } catch (error) {
