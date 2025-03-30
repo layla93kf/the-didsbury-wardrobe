@@ -122,28 +122,35 @@ exports.removeItem = (itemId) => {
 };
 
 exports.sendRequest = async (rentalRequest) => {
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.office365.com',
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.OUTLOOK_EMAIL,
-      pass: process.env.OUTLOOK_PASSWORD,
-    },
-  });
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.office365.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.OUTLOOK_EMAIL,
+        pass: process.env.OUTLOOK_PASSWORD,
+      },
+    });
 
-  const nameOfSender = rentalRequest.fullName;
+    const nameOfSender = rentalRequest.fullName;
+    const message = `A rental request has come in from ${rentalRequest.fullName}. They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Send an email to ${rentalRequest.email} to confirm the rental.`;
 
-  const message = `A rental request has come in from ${rentalRequest.fullName}. They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Send an email to ${rentalRequest.email} to confirm the rental.`;
+    const info = await transporter.sendMail({
+      from: process.env.OUTLOOK_EMAIL,
+      to: 'layla93k@gmail.com',
+      subject: `New Rental Request from ${nameOfSender}!`,
+      text: message,
+    });
 
-  // const address = `${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}`;
-
-  const info = await transporter.sendMail({
-    from: process.env.OUTLOOK_EMAIL,
-    to: 'layla93k@gmail.com',
-    subject: `New Rental Request from ${nameOfSender}!`, // Subject line
-    text: message,
-    // html: '<b>Hello world?</b>', // html body
-  });
-  console.log('Email sent:', info.response);
+    console.log('Email sent:', info.response);
+    return { success: true, message: 'Email sent successfully' };
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return {
+      success: false,
+      message: 'Error sending email',
+      error: error.message,
+    };
+  }
 };
