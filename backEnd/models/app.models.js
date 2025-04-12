@@ -1,7 +1,7 @@
 const db = require('../db/connection.js');
 const axios = require('axios');
 require('dotenv').config();
-const logo = '../../frontEnd/src/assets/logo.png';
+const logo = require('../../frontEnd/src/assets/logo.png');
 
 exports.fetchItemsByCategory = (category) => {
   const categoryStrings = {
@@ -123,10 +123,11 @@ exports.removeItem = (itemId) => {
 };
 
 exports.sendRequest = async (rentalRequest) => {
+  const date = dateStart.split('T')[0];
   const nameOfSender = rentalRequest.fullName;
   const message1 = `Hi Lizzie,`;
   const message2 = `A rental request has come in from ${rentalRequest.fullName}. `;
-  const message3 = `They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} from ${rentalRequest.dateStart} for ${rentalRequest.rentalDuration}.`;
+  const message3 = `They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} from ${rentalRequest.date} for ${rentalRequest.rentalDuration} days.`;
   const message4 = `Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
 Send an email to ${rentalRequest.email} to confirm the rental.`;
 
