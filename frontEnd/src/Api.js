@@ -75,6 +75,6 @@ export const sendRequestForm = (formData) => {
       return response.data.data;
     })
     .catch((err) => {
-      return err;
+      throw err;
     });
 };

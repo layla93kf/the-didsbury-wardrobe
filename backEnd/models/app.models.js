@@ -122,23 +122,22 @@ exports.removeItem = (itemId) => {
 };
 
 exports.sendRequest = async (rentalRequest) => {
-  const date = dateStart.split('T')[0];
+  const date = rentalRequest.dateStart.split('T')[0];
   const nameOfSender = rentalRequest.fullName;
   const message1 = `Hi Lizzie,`;
   const message2 = `A rental request has come in from ${rentalRequest.fullName}. `;
-  const message3 = `They would like to rent the <b>${rentalRequest.item}</b> by <b>${rentalRequest.origin}</b> from <b>${date}</b> for <b>${rentalRequest.rentalDuration} days</b>.`;
+  const message3 = `They would like to rent the <b>${rentalRequest.item} by <b>${rentalRequest.origin}</b> from <b>${date}</b> for <b>${rentalRequest.rentalDuration} days</b>.`;
   const message4 = `Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
-Send an email to ${rentalRequest.email} if you would like to sconfirm the rental.`;
+Send an email to ${rentalRequest.email} if you would like to confirm the rental.`;
 
   const htmlBody = `
     <html>
       <body>
-        <h1>Rental Request from ${rentalRequest.fullName}</h1>
+        <h2>Rental Request from ${rentalRequest.fullName}</h2>
         <p>${message1}</p>
         <p>${message2}</p>
         <p>${message3}</p>
         <p>${message4}</p>
-       
       </body>
     </html>`;
 
