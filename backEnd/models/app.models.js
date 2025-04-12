@@ -1,7 +1,6 @@
 const db = require('../db/connection.js');
 const axios = require('axios');
 require('dotenv').config();
-const logo = require('../../frontEnd/src/assets/logo.png');
 
 exports.fetchItemsByCategory = (category) => {
   const categoryStrings = {
@@ -127,9 +126,9 @@ exports.sendRequest = async (rentalRequest) => {
   const nameOfSender = rentalRequest.fullName;
   const message1 = `Hi Lizzie,`;
   const message2 = `A rental request has come in from ${rentalRequest.fullName}. `;
-  const message3 = `They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} from ${rentalRequest.date} for ${rentalRequest.rentalDuration} days.`;
+  const message3 = `They would like to rent the <b>${rentalRequest.item}</b> by <b>${rentalRequest.origin}</b> from <b>${date}</b> for <b>${rentalRequest.rentalDuration} days</b>.`;
   const message4 = `Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
-Send an email to ${rentalRequest.email} to confirm the rental.`;
+Send an email to ${rentalRequest.email} if you would like to sconfirm the rental.`;
 
   const htmlBody = `
     <html>
@@ -139,7 +138,7 @@ Send an email to ${rentalRequest.email} to confirm the rental.`;
         <p>${message2}</p>
         <p>${message3}</p>
         <p>${message4}</p>
-        <img src=${logo}></img>
+       
       </body>
     </html>`;
 
