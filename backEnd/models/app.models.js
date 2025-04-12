@@ -1,6 +1,7 @@
 const db = require('../db/connection.js');
 const axios = require('axios');
 require('dotenv').config();
+const logo = '../../frontEnd/src/assets/logo.png';
 
 exports.fetchItemsByCategory = (category) => {
   const categoryStrings = {
@@ -123,17 +124,29 @@ exports.removeItem = (itemId) => {
 
 exports.sendRequest = async (rentalRequest) => {
   const nameOfSender = rentalRequest.fullName;
-  const message = `Hi Lizzie,
-A rental request has come in from ${rentalRequest.fullName}. 
-  
-They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
+  const message1 = `Hi Lizzie,`;
+  const message2 = `A rental request has come in from ${rentalRequest.fullName}. `;
+  const message3 = `They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} from ${rentalRequest.dateStart} for ${rentalRequest.rentalDuration}.`;
+  const message4 = `Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
 Send an email to ${rentalRequest.email} to confirm the rental.`;
+
+  const htmlBody = `
+    <html>
+      <body>
+        <h1>Rental Request from ${rentalRequest.fullName}</h1>
+        <p>${message1}</p>
+        <p>${message2}</p>
+        <p>${message3}</p>
+        <p>${message4}</p>
+        <img src=${logo}></img>
+      </body>
+    </html>`;
 
   const body = {
     content: {
       from: 'no-reply@thedidsburywardrobe.uk',
       subject: `New rental request from ${nameOfSender}!`,
-      text: message,
+      html: htmlBody,
     },
     recipients: [
       {
