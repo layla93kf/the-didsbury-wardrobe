@@ -70,14 +70,21 @@ function Modal({ onClose, item }) {
       ...prev,
     }));
 
-    sendRequestForm(formData).then((res) => {
-      if (res && res.results.total_accepted_recipients === 1) {
-        setSuccessMsg(
-          'Your request has been sent to Didsbury Wardrobe HQ and will be responded to within 5 working days.',
-        );
-      }
-      setFormData(initialFormData);
-    });
+    sendRequestForm(formData)
+      .then((res) => {
+        if (res && res.results.total_accepted_recipients === 1) {
+          setSuccessMsg(
+            'Your request has been sent to Didsbury Wardrobe HQ and will be responded to within 5 working days.',
+          );
+        }
+        setFormData(initialFormData);
+      })
+      .catch((err) => {
+        setError((prev) => ({
+          ...prev,
+          send: 'Unable to send request, please try again.',
+        }));
+      });
   };
 
   return (
@@ -203,6 +210,7 @@ function Modal({ onClose, item }) {
               {successMsg}
             </p>
           )}
+          {error.send && <p className="text-red-800 text-xs">{error.send}</p>}
         </form>
       </div>
     </div>
