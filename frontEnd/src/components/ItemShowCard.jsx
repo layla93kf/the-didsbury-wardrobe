@@ -140,22 +140,22 @@ export default function ItemShowCard() {
               <p className="text-ml mb-7">UK {singleItem.size}</p>
               <div className="bg-zinc-100 p-4 mb-10 w-80 text-sm text-gray-700 ">
                 <h6 className="mb-6">Worried about fit?</h6>
-                <p className="mb-5">
+                <p className="mb-3">
                   You can come and try on for a fee redeemable against the hire.
                   You can also try on multiple items at once to find your
                   perfect outfit for that special occasion!
                 </p>
               </div>
-              {/* <a
-                href="https://ig.me/m/the_didsbury_wardrobe"
-                target="_blank"
-                rel="noopener noreferrer"
-              > */}
-              <button className="border-2 text-sm bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded w-30 mb-20 flex items-center space-x-2">
+
+              <button
+                onClick={() => setShowModal(true)}
+                className="border-2 text-sm bg-zinc-800 text-white p-4 hover:bg-zinc-700 hover:text-white rounded-md w-30 mb-20 flex items-center space-x-2"
+              >
                 <span>Rent Now</span>
               </button>
-              <Modal onClose={() => setShowModal(false)} />
-              {/* </a> */}
+              {showModal && (
+                <Modal onClose={() => setShowModal(false)} item={singleItem} />
+              )}
             </div>
           </>
         )}

@@ -123,13 +123,11 @@ exports.removeItem = (itemId) => {
 
 exports.sendRequest = async (rentalRequest) => {
   const nameOfSender = rentalRequest.fullName;
-  const message = `
-  Hi Lizzie,
-  A rental request has come in from ${rentalRequest.fullName}. 
+  const message = `Hi Lizzie,
+A rental request has come in from ${rentalRequest.fullName}. 
   
-  They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. 
-  Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
-  Send an email to ${rentalRequest.email} to confirm the rental.`;
+They would like to rent the ${rentalRequest.item} by ${rentalRequest.origin} on ${rentalRequest.startDate} until ${rentalRequest.endDate}. Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
+Send an email to ${rentalRequest.email} to confirm the rental.`;
 
   const body = {
     content: {
