@@ -126,9 +126,9 @@ exports.sendRequest = async (rentalRequest) => {
   const nameOfSender = rentalRequest.fullName;
   const message1 = `Hi Lizzie,`;
   const message2 = `A rental request has come in from ${rentalRequest.fullName}. `;
-  const message3 = `They would like to rent the <b>${rentalRequest.item} by <b>${rentalRequest.origin}</b> from <b>${date}</b> for <b>${rentalRequest.rentalDuration} days</b>.`;
-  const message4 = `Their address is ${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.
-Send an email to ${rentalRequest.email} if you would like to confirm the rental.`;
+  const message3 = `They would like to rent the <b>${rentalRequest.item}</b> by <b>${rentalRequest.origin}</b> from <b>${date}</b> for <b>${rentalRequest.rentalDuration} days</b>.`;
+  const message4 = `Their address is <b>${rentalRequest.address}, ${rentalRequest.city}, ${rentalRequest.postcode}.</b>`;
+  const message5 = `<b>Send an email to ${rentalRequest.email} if you would like to confirm the rental.</b>`;
 
   const htmlBody = `
     <html>
@@ -138,6 +138,7 @@ Send an email to ${rentalRequest.email} if you would like to confirm the rental.
         <p>${message2}</p>
         <p>${message3}</p>
         <p>${message4}</p>
+        <p>${message5}</p>
       </body>
     </html>`;
 
