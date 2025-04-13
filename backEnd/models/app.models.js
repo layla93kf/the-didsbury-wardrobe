@@ -150,7 +150,7 @@ exports.sendRequest = async (rentalRequest) => {
     },
     recipients: [
       {
-        address: 'layla.kawafi@hotmail.com',
+        address: 'Thedidsburywardrobe@gmail.com',
       },
     ],
   };
