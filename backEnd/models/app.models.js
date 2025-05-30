@@ -9,6 +9,7 @@ exports.fetchItemsByCategory = (category) => {
     jumpsuits: 'jumpsuits',
     skirts: 'skirts',
     tops: 'tops',
+    festival: 'festival',
     accessories: 'accessories',
   };
   const categoryValue = categoryStrings[category];

@@ -34,6 +34,9 @@ const NavBar = () => {
             <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
               <Link to="/api/clothing/accessories"> Accessories </Link>
             </div>
+            <div className="px-4 py-2 text-gray-800 hover:text-gray-900">
+              <Link to="/api/clothing/festival"> Festival </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -98,6 +101,13 @@ const NavBar = () => {
                   onClick={closeMenu}
                 >
                   Accessories
+                </Link>
+                <Link
+                  to="/api/clothing/festival"
+                  className="border-b pb-1 text-xl mt-2 "
+                  onClick={closeMenu}
+                >
+                  Festival
                 </Link>
               </div>
             </div>

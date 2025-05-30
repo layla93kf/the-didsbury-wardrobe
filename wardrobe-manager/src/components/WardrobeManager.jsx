@@ -10,6 +10,7 @@ export default function WardrobeManager() {
     'skirts',
     'jumpsuits',
     'accessories',
+    'festival',
   ];
   const sizes = [6, 8, 10, 12, 14, 16, 18];
 
