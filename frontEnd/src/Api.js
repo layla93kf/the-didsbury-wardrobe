@@ -1,4 +1,20 @@
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
+
+axiosRetry(axios, {
+  retryCondition: (e) =>
+    axiosRetry.isRetryableError(e) ||
+    e.status === 429 ||
+    e.response?.status === 429 ||
+    e.status === 409 ||
+    e.response?.status === 409,
+  onRetry: (retryCount, e) => {
+    console.log(`axios-retry attempt: ${retryCount}, errorcode: ${e.code}`);
+  },
+  retryDelay: () => 2000,
+  shouldResetTimeout: true,
+  retries: 5,
+});
 
 export const getItemsByCategory = (category) => {
   let path = 'https://the-didsbury-wardrobe-3.onrender.com/api/clothing';
