@@ -19,9 +19,12 @@ const {
 app.use(express.json());
 app.use(
   cors({
-    origin: '*',
+    origin: ['https://thedidsburywardrobe.netlify.app', 'http://localhost:3000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+    credentials: false,
+    preflightContinue: false,
+    optionsSuccessStatus: 200,
   }),
 );
 
