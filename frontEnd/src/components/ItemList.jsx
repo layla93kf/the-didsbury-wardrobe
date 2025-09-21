@@ -57,6 +57,31 @@ export default function ItemList({ isLoading, setIsLoading }) {
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  // Pagination display logic - show 4 buttons at a time
+  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+  const maxVisiblePages = 4;
+  
+  const getVisiblePages = () => {
+    if (totalPages <= maxVisiblePages) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    
+    const halfVisible = Math.floor(maxVisiblePages / 2);
+    let startPage = Math.max(1, currentPage - halfVisible);
+    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+    
+    // Adjust start page if we're near the end
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+    
+    return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+  };
+
+  const visiblePages = getVisiblePages();
+  const showPrevArrow = visiblePages[0] > 1;
+  const showNextArrow = visiblePages[visiblePages.length - 1] < totalPages;
+
   return isLoading ? (
     <div className="flex items-center justify-center h-screen">
       <div role="status">
@@ -161,22 +186,47 @@ export default function ItemList({ isLoading, setIsLoading }) {
       {filteredItems.length > itemsPerPage && (
         <div className="flex justify-center mt-4 mb-20">
           <nav className="block">
-            <ul className="flex pl-0 rounded list-none flex-wrap">
-              {[...Array(Math.ceil(filteredItems.length / itemsPerPage))].map(
-                (_, index) => (
-                  <li key={index} className="mx-1">
-                    <button
-                      className={`${
-                        currentPage === index + 1
-                          ? 'bg-zinc-500 text-white'
-                          : 'bg-zinc-100 text-black'
-                      } font-semibold py-2 px-4 border-2 border-zinc-200 hover:bg-zinc-800 hover:text-white`}
-                      onClick={() => paginate(index + 1)}
-                    >
-                      {index + 1}
-                    </button>
-                  </li>
-                ),
+            <ul className="flex pl-0 rounded list-none flex-wrap items-center">
+              {/* Previous arrow */}
+              {showPrevArrow && (
+                <li className="mx-1">
+                  <button
+                    className="bg-zinc-100 text-black font-semibold py-2 px-3 border-2 border-zinc-200 hover:bg-zinc-800 hover:text-white"
+                    onClick={() => paginate(visiblePages[0] - 1)}
+                    aria-label="Previous page"
+                  >
+                    ←
+                  </button>
+                </li>
+              )}
+              
+              {/* Page numbers */}
+              {visiblePages.map((pageNumber) => (
+                <li key={pageNumber} className="mx-1">
+                  <button
+                    className={`${
+                      currentPage === pageNumber
+                        ? 'bg-zinc-500 text-white'
+                        : 'bg-zinc-100 text-black'
+                    } font-semibold py-2 px-4 border-2 border-zinc-200 hover:bg-zinc-800 hover:text-white`}
+                    onClick={() => paginate(pageNumber)}
+                  >
+                    {pageNumber}
+                  </button>
+                </li>
+              ))}
+              
+              {/* Next arrow */}
+              {showNextArrow && (
+                <li className="mx-1">
+                  <button
+                    className="bg-zinc-100 text-black font-semibold py-2 px-3 border-2 border-zinc-200 hover:bg-zinc-800 hover:text-white"
+                    onClick={() => paginate(visiblePages[visiblePages.length - 1] + 1)}
+                    aria-label="Next page"
+                  >
+                    →
+                  </button>
+                </li>
               )}
             </ul>
           </nav>
