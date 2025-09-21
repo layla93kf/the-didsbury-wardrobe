@@ -19,9 +19,16 @@ const {
 app.use(express.json());
 app.use(
   cors({
-    origin: ['https://thedidsburywardrobe.netlify.app', 'http://localhost:3000'],
+    origin: [
+      'https://thedidsburywardrobe.netlify.app', 
+      'https://sparkly-macaron-237c8d.netlify.app',
+      'http://localhost:3000',
+      'https://www.instagram.com',
+      'https://instagram.com',
+      'https://m.instagram.com'
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'User-Agent'],
     credentials: false,
     preflightContinue: false,
     optionsSuccessStatus: 200,
