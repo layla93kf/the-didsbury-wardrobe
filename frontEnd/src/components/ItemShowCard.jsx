@@ -34,7 +34,6 @@ export default function ItemShowCard() {
                 height: 0,
                 paddingTop: '25%',
                 paddingBottom: 0,
-                willChange: 'transform',
                 marginLeft: '50px',
                 marginBottom: '40px',
                 marginTop: '60px',
@@ -108,7 +107,6 @@ export default function ItemShowCard() {
                   height: '200px',
                   paddingTop: 0,
                   paddingBottom: 0,
-                  willChange: 'transform',
                   marginLeft: '30px',
                   marginTop: '10px',
                 }}

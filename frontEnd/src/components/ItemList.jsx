@@ -10,7 +10,7 @@ export default function ItemList({ isLoading, setIsLoading }) {
   const { category } = useParams();
   const [selectedSize, setSelectedSize] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const itemsPerPage = 8;
 
   useEffect(() => {
     setIsLoading(true);
