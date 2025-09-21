@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const OverlayClickableIframe = ({ src, clothingId }) => {
   const navigate = useNavigate();
   const handleOverlayClick = () => {
-    navigate(`api/items/${clothingId}`);
+    navigate(`/api/items/${clothingId}`);
   };
 
   const isAboveMediumScreens = useMediaQuery('(min-width: 760px)');
