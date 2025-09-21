@@ -24,6 +24,9 @@ export const getItemsByCategory = (category) => {
     return axios.get(path).then((response) => {
       console.log(response.data);
       return response.data;
+    }).catch((error) => {
+      console.error('Error fetching items by category:', error);
+      throw error;
     });
   }
 };
